@@ -1,0 +1,8 @@
+.setup_preference__container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-color-dark);
+}
