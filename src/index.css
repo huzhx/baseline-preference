@@ -1,12 +1,15 @@
 :root {
   box-sizing: border-box;
   --primary-color: #2fbca1;
+  --primary-color-dark: #31b39b;
   --primary-text-color: #212121;
   --secondary-text-color: #757575;
+  --text-icon: #ffffff;
   --background-color-light: #ffffff;
   --background-color-dark: #f4f4f4;
   --background-border-color: #707070;
   --box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.15);
+  --button-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 *,
