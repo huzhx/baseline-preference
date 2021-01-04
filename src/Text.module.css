@@ -4,6 +4,7 @@
   background-color: var(--background-color-light);
   border-radius: 2em;
   box-shadow: var(--box-shadow);
+  color: var(--primary-text-color);
   font-size: 1rem;
   font-weight: 650;
   line-height: 1.6em;
