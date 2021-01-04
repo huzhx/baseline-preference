@@ -1,0 +1,11 @@
+.text__container {
+  margin: 0.8em 1.5em;
+  padding: 1.2em 1.5em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+}
