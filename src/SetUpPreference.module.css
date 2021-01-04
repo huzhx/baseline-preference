@@ -1,8 +1,22 @@
 .setup_preference__container {
+  min-width: 330px;
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   background-color: var(--background-color-dark);
+}
+
+.setup_preference__content_container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.setup_preference__button_container {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--background-color-light);
 }
