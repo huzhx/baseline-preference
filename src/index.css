@@ -4,13 +4,15 @@
   --primary-color-dark: #31b39b;
   --primary-color-dark-extra: #2a9481;
   --primary-text-color: #212121;
-  --secondary-text-color: #757575;
+  --secondary-text-color: #888787;
   --text-icon: #ffffff;
   --background-color-light: #ffffff;
   --background-color-dark: #f4f4f4;
   --background-border-color: #707070;
-  --box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.15);
+  --box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
   --button-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  --button-box-shadow-light: 0 0 0.3rem rgba(0, 0, 0, 0.25);
+  --button-box-shadow-primay: 0 0 0.3rem rgba(47, 188, 161, 0.8);
 }
 
 *,
