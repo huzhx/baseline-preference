@@ -1,0 +1,63 @@
+.preference_form_element__container {
+  display: flex;
+  flex-direction: column;
+  min-width: 290px;
+  margin: 1.5em 2em;
+  padding: 0.8em 0.8em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+}
+
+.preference_form_element__label {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.5em 0.8em;
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+}
+
+.preference_form_element__buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.preference_form_element__buttons input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.preference_form_element__buttons label {
+  display: inline-block;
+  min-width: 117px;
+  padding: 0.45em 3em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--button-box-shadow-light);
+  border: 0;
+  color: var(--secondary-text-color);
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.6em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.preference_form_element__buttons input[type='radio'] + label:hover,
+.preference_form_element__buttons input[type='radio']:checked + label:hover {
+  background-color: var(--primary-color);
+  color: var(--text-icon);
+}
+.preference_form_element__buttons input[type='radio']:checked + label {
+  color: var(--primary-color);
+  box-shadow: var(--button-box-shadow-primay);
+}
