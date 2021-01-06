@@ -1,11 +1,11 @@
-.preference_form {
+.baseline_preference_form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: var(--background-color-dark);
 }
 
-.preference_form__header {
+.baseline_preference_form__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +19,6 @@
   letter-spacing: 0.05em;
 }
 
-.preference_form__header--highlighted {
+.baseline_preference_form__header--highlighted {
   color: var(--primary-color);
 }

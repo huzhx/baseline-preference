@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
-import styles from './PreferenceForm.module.css';
-import PreferenceFormElement from './PreferenceFormElement';
+import styles from './BaselinePreferenceForm.module.css';
+import BaselinePreferenceFormElement from './BaselinePreferenceFormElement';
 
-const PreferenceForm = ({ dataElement, handleClick }) => {
+const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
   const [doctorOfficeState, setDoctorOfficeState] = useState('');
   const [hospitalState, setHospitalState] = useState('');
   const [insuranceState, setInsuranceState] = useState('');
@@ -84,13 +84,13 @@ const PreferenceForm = ({ dataElement, handleClick }) => {
 
   const options = ['Yes', 'No'];
 
-  const preferenceFormElements = [];
+  const baselinePreferenceFormElements = [];
 
   for (let label of labels) {
     const curCheckedValue = labelStateMap.get(label);
     const handleChange = labelHandleChangeMap.get(label);
-    preferenceFormElements.push(
-      <PreferenceFormElement
+    baselinePreferenceFormElements.push(
+      <BaselinePreferenceFormElement
         key={label}
         label={label}
         options={options}
@@ -101,16 +101,16 @@ const PreferenceForm = ({ dataElement, handleClick }) => {
   }
 
   return (
-    <div className={styles.preference_form}>
-      <div className={styles.preference_form__header}>
+    <div className={styles.baseline_preference_form}>
+      <div className={styles.baseline_preference_form__header}>
         <div>
           How Comfortable are you with sharing your{' '}
-          <span className={styles['preference_form__header--highlighted']}>{dataElement} Information</span>
+          <span className={styles['baseline_preference_form__header--highlighted']}>{dataElement} Information</span>
         </div>
       </div>
-      {preferenceFormElements}
+      {baselinePreferenceFormElements}
     </div>
   );
 };
 
-export default PreferenceForm;
+export default BaselinePreferenceForm;
