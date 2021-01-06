@@ -7,19 +7,33 @@ const PreferenceFormElement = ({ label, options, curCheckedValue, handleChange }
   for (let option of options) {
     radioGroup.push(
       <div key={option}>
-        <input type="radio" id={option} value={option} checked={option === curCheckedValue} onChange={handleChange} />
-        <label htmlFor={option}> {option} </label>
+        <label
+          className={
+            option === curCheckedValue
+              ? [
+                  styles.preference_form_element__buttons__label,
+                  styles['preference_form_element__buttons__label--checked'],
+                ].join(' ')
+              : styles.preference_form_element__buttons__label
+          }
+        >
+          {option}
+          <input
+            className={styles.preference_form_element__buttons__input}
+            type="radio"
+            id={option}
+            value={option}
+            checked={option === curCheckedValue}
+            onChange={handleChange}
+          />
+        </label>
       </div>
     );
   }
   return (
-    // <div className={styles.preference_form_element__container}>
-    //   <div className={styles.preference_form_element__label}>{label}</div>
-    //   <div className={styles.preference_form_element__buttons}>{radioGroup}</div>
-    // </div>
-    <div>
-      <div>{label}</div>
-      <div>{radioGroup}</div>
+    <div className={styles.preference_form_element__container}>
+      <div className={styles.preference_form_element__label}>{label}</div>
+      <div className={styles.preference_form_element__buttons}>{radioGroup}</div>
     </div>
   );
 };
