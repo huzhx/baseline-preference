@@ -101,8 +101,13 @@ const PreferenceForm = ({ dataElement, handleClick }) => {
   }
 
   return (
-    <div>
-      <div>How Comfortable are you with sharing your {dataElement} </div>
+    <div className={styles.preference_form}>
+      <div className={styles.preference_form__header}>
+        <div>
+          How Comfortable are you with sharing your{' '}
+          <span className={styles['preference_form__header--highlighted']}>{dataElement} Information</span>
+        </div>
+      </div>
       {preferenceFormElements}
     </div>
   );

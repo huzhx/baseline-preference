@@ -1,0 +1,24 @@
+.preference_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-color-dark);
+}
+
+.preference_form__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 1.8em;
+  margin-bottom: 0.8em;
+  background-color: var(--background-color-light);
+  font-size: 1.5rem;
+  font-weight: 650;
+  line-height: 1.4em;
+  letter-spacing: 0.05em;
+}
+
+.preference_form__header--highlighted {
+  color: var(--primary-color);
+}
