@@ -1,4 +1,4 @@
-.preference_form_element__container {
+.baseline_preference_form_element__container {
   display: flex;
   flex-direction: column;
   min-width: 290px;
@@ -9,7 +9,7 @@
   box-shadow: var(--box-shadow);
 }
 
-.preference_form_element__label {
+.baseline_preference_form_element__label {
   display: flex;
   justify-content: flex-start;
   margin: 0.5em 0.8em;
@@ -20,18 +20,18 @@
   letter-spacing: 0.05em;
 }
 
-.preference_form_element__buttons {
+.baseline_preference_form_element__buttons {
   display: flex;
   justify-content: space-around;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-.preference_form_element__buttons__input {
+.baseline_preference_form_element__buttons__input {
   display: none;
 }
 
-.preference_form_element__buttons__label {
+.baseline_preference_form_element__buttons__label {
   display: inline-block;
   min-width: 117px;
   padding: 0.45em 3em;
@@ -50,15 +50,15 @@
   transition: 0.3s;
 }
 
-.preference_form_element__buttons label:hover {
+.baseline_preference_form_element__buttons label:hover {
   background-color: var(--primary-color-light-extra);
 }
 
-.preference_form_element__buttons label:active {
+.baseline_preference_form_element__buttons label:active {
   background-color: var(--primary-color-light);
 }
 
-.preference_form_element__buttons__label--checked {
+.baseline_preference_form_element__buttons__label--checked {
   color: var(--primary-color);
   box-shadow: var(--button-box-shadow-primay);
 }
