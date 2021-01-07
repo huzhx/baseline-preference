@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: nowrap;
   background-color: var(--background-color-dark);
 }
 
@@ -17,8 +18,36 @@
   font-weight: 650;
   line-height: 1.4em;
   letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 100%;
+  top: 0;
 }
 
 .baseline_preference_form__header--highlighted {
   color: var(--primary-color);
+}
+
+.baseline_preference_form__body {
+  overflow: auto;
+  flex-grow: 1;
+  padding: 0 2em;
+  margin-bottom: 5.8em;
+}
+
+.baseline_preference_form__footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--background-color-light);
+  margin-top: 0.8em;
+  position: fixed;
+  max-height: 5em;
+  width: 100%;
+  bottom: 0;
+  flex-shrink: 0;
+  transition: transform 400ms ease-in;
+  transform: translateY(0);
+}
+
+.baseline_preference_form__footer--hide {
+  transform: translateY(100%);
 }

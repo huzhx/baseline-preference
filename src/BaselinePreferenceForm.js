@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './BaselinePreferenceForm.module.css';
 import BaselinePreferenceFormElement from './BaselinePreferenceFormElement';
+import Button from './Button';
+import { useScrollPosition } from './UseScrollPosition';
 
 const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
+  const [sticky, setSticky] = useState(false);
   const [doctorOfficeState, setDoctorOfficeState] = useState('');
   const [hospitalState, setHospitalState] = useState('');
   const [insuranceState, setInsuranceState] = useState('');
@@ -33,6 +36,14 @@ const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
   const handleUniversityChange = (event) => {
     setUniversityState(event.target.value);
   };
+
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y;
+      if (isShow !== sticky) setSticky(isShow);
+    },
+    [sticky]
+  );
 
   useEffect(() => {
     console.log({
@@ -100,6 +111,8 @@ const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
     );
   }
 
+  const buttonLabel = 'next';
+
   return (
     <div className={styles.baseline_preference_form}>
       <div className={styles.baseline_preference_form__header}>
@@ -108,7 +121,16 @@ const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
           <span className={styles['baseline_preference_form__header--highlighted']}>{dataElement} Information</span>
         </div>
       </div>
-      {baselinePreferenceFormElements}
+      <div className={styles.baseline_preference_form__body}>{baselinePreferenceFormElements}</div>
+      <div
+        className={
+          sticky
+            ? [styles.baseline_preference_form__footer, styles['baseline_preference_form__footer--hide']].join(' ')
+            : styles.baseline_preference_form__footer
+        }
+      >
+        <Button label={buttonLabel} />
+      </div>
     </div>
   );
 };
