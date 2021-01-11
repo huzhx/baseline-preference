@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
 
 import styles from './BaselinePreferenceForm.module.css';
 import BaselinePreferenceFormElement from './BaselinePreferenceFormElement';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
 
-const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
+const BaselinePreferenceForm = ({ cb }) => {
+  const { dataElement } = useParams();
+  const nextPath = cb(dataElement);
+  const history = useHistory();
+  const handleClick = () => {
+    history.push(nextPath);
+  };
+
   const [sticky, setSticky] = useState(false);
   const [doctorOfficeState, setDoctorOfficeState] = useState('');
   const [hospitalState, setHospitalState] = useState('');
@@ -118,7 +126,9 @@ const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
       <div className={styles.baseline_preference_form__header}>
         <div>
           How Comfortable are you with sharing your{' '}
-          <span className={styles['baseline_preference_form__header--highlighted']}>{dataElement} Information</span>
+          <span className={styles['baseline_preference_form__header--highlighted']}>
+            {dataElement.split('-').join(' ')} Information
+          </span>
         </div>
       </div>
       <div className={styles.baseline_preference_form__body}>{baselinePreferenceFormElements}</div>
@@ -129,7 +139,7 @@ const BaselinePreferenceForm = ({ dataElement, handleClick }) => {
             : styles.baseline_preference_form__footer
         }
       >
-        <Button label={buttonLabel} />
+        <Button label={buttonLabel} handleClick={handleClick} />
       </div>
     </div>
   );
