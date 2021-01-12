@@ -4,11 +4,22 @@
   justify-content: center;
   align-items: center;
   min-width: 270px;
-  margin: 0.8em 1.5em;
+  min-height: 99px;
+  margin: 1.2em 1.5em;
   padding: 1.2em 1.5em;
   background-color: var(--background-color-light);
   border-radius: 2em;
   box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home_element:hover {
+  background-color: var(--primary-color-light-extra);
+}
+
+.home_element:active {
+  background-color: var(--primary-color-light);
 }
 
 .home_element__label {
