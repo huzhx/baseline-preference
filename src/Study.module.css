@@ -1,0 +1,22 @@
+.study {
+  min-width: 270px;
+  margin: 0.8em 1.5em 1.2em 1.5em;
+  padding: 1.2em 1.5em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+}
+
+.study__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.study__content--highlighted {
+  color: var(--primary-color);
+}
