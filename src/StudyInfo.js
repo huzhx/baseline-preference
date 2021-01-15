@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import styles from './StudyInfo.module.css';
 import Study from './Study';
+import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
 
@@ -24,7 +25,7 @@ const StudyInfo = () => {
   };
   return (
     <div className={styles.study_info}>
-      <div className={styles.study_info__header}>Study Information</div>
+      <Header title="Study Information" />
       <div className={styles.study_info__body}>
         <Study
           institution={studyInfo.institution}
