@@ -1,0 +1,49 @@
+.study_data_sharing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: var(--background-color-dark);
+}
+
+.study_data_sharing__body {
+  overflow: auto;
+  flex-grow: 1;
+  min-width: 270px;
+  margin: 0.8em 1.5em 5.8em 1.5em;
+  padding: 1.2em 1.5em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+}
+
+.study_data_sharing__label {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+}
+
+.study_data_sharing__form {
+  margin: 1em 0;
+}
+
+.study_data_sharing__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: var(--background-color-light);
+  margin-top: 0.8em;
+  position: fixed;
+  max-height: 5em;
+  width: 100%;
+  bottom: 0;
+  flex-shrink: 0;
+  transition: transform 400ms ease-in;
+  transform: translateY(0);
+}
+
+.study_data_sharing__footer--hide {
+  transform: translateY(100%);
+}
