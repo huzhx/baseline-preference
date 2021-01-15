@@ -1,0 +1,32 @@
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox .overlay {
+  display: flex;
+  height: 1.24em;
+  width: 1.24em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  border: 0.16em solid var(--primary-color);
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+}
+
+.checkbox .overlay .icon {
+  color: white;
+  display: none;
+}
+
+.checkbox input:checked ~ .overlay {
+  background-color: var(--primary-color);
+  border-radius: 0.3em;
+  transform: rotate(0deg);
+  opacity: 1;
+  border: 0.16em solid var(--primary-color);
+}
+
+.checkbox input:checked ~ .overlay .icon {
+  display: block;
+}
