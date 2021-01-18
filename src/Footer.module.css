@@ -1,0 +1,25 @@
+.footer {
+  background-color: var(--background-color-light);
+  margin-top: 0.8em;
+  position: fixed;
+  max-height: 5em;
+  width: 100%;
+  bottom: 0;
+  flex-shrink: 0;
+  transition: transform 400ms ease-in;
+  transform: translateY(0);
+}
+
+.footer--hide {
+  transform: translateY(100%);
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer__content--alignEvenly {
+  justify-content: space-evenly;
+}
