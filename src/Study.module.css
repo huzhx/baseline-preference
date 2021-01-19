@@ -1,7 +1,6 @@
 .study {
-  width: 85%;
   align-self: center;
-  margin: 0.8em 1.5em 5.8em 1.5em;
+  margin: 0.8em 0 1.8em 0;
   padding: 1.2em 2em;
   background-color: var(--background-color-light);
   border-radius: 2em;
