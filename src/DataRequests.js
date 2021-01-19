@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './DataRequests.module.css';
 import Study from './Study';
+import Header from './Header';
+import Footer from './Footer';
+import { useScrollPosition } from './UseScrollPosition';
 
 const DataRequests = () => {
+  const [sticky, setSticky] = useState(false);
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isShow = currPos.y > prevPos.y;
+      if (isShow !== sticky) setSticky(isShow);
+    },
+    [sticky]
+  );
+
   const newRequests = [
     {
       institution: 'University of California San Diego',
@@ -20,12 +32,14 @@ const DataRequests = () => {
   }
   return (
     <div className={styles.data_requests}>
-      <div className={styles.data_requests__header}>New Data Requests</div>
-      <div className={styles.data_requests__body}>{requests}</div>
-      <div className={styles.data_requests__footer}>
+      <Header title="New Data Requests" />
+      <div className={styles.data_requests__body}>
+        <div className={styles.data_requests__content}>{requests}</div>
+      </div>
+      <Footer alignContentEvenly={true} sticky={sticky}>
         <div>Home</div>
         <div>My profile</div>
-      </div>
+      </Footer>
     </div>
   );
 };
