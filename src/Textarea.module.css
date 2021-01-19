@@ -1,0 +1,37 @@
+.textarea {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.8em 1em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.3em;
+  transition: 0.08s box-shadow ease-in-out;
+}
+
+.input[readonly] {
+  border-style: dotted;
+  cursor: not-allowed;
+  color: var(--secondary-text-color);
+}
+
+.input[disabled] {
+  background-color: var(--background-color-dark);
+  cursor: not-allowed;
+}
+
+.textarea .input {
+  resize: vertical;
+}
+
+.input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0.2em rgba(47, 188, 161, 0.8);
+  outline: 0.8em solid transparent;
+}
