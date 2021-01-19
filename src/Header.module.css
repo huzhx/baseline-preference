@@ -12,6 +12,7 @@
   line-height: 1.4em;
   letter-spacing: 0.05em;
   flex-grow: 1;
+  max-height: 30%;
   width: 100%;
   top: 0;
 }
