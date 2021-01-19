@@ -4,47 +4,13 @@
   justify-content: center;
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
-}
-
-.study_info__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em 1.8em;
-  margin-bottom: 0.8em;
-  background-color: var(--background-color-light);
-  text-transform: capitalize;
-  font-size: 1.5rem;
-  font-weight: 650;
-  line-height: 1.4em;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-  width: 100%;
-  top: 0;
+  height: 100vh;
+  min-width: 270px;
 }
 
 .study_info__body {
-  overflow: auto;
   flex-grow: 1;
-  margin-bottom: 5.8em;
-}
-
-.study_info__footer {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  background-color: var(--background-color-light);
-  margin-top: 0.8em;
-  position: fixed;
-  max-height: 5em;
-  width: 100%;
-  bottom: 0;
-  flex-shrink: 0;
-  transition: transform 400ms ease-in;
-  transform: translateY(0);
-}
-
-.study_info__footer--hide {
-  transform: translateY(100%);
+  flex-direction: column;
+  justify-content: center;
 }

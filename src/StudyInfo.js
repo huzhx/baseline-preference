@@ -5,6 +5,7 @@ import Study from './Study';
 import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
+import Footer from './Footer';
 
 const StudyInfo = () => {
   const [sticky, setSticky] = useState(false);
@@ -35,13 +36,9 @@ const StudyInfo = () => {
           dateRequested={studyInfo.dateRequested}
         />
       </div>
-      <div
-        className={
-          sticky ? [styles.study_info__footer, styles['study_info__footer--hide']].join(' ') : styles.study_info__footer
-        }
-      >
+      <Footer alignContentEvenly={false} sticky={sticky}>
         <Button label="Next" />
-      </div>
+      </Footer>
     </div>
   );
 };
