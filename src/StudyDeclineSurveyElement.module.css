@@ -9,14 +9,12 @@
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
-  text-transform: capitalize;
 }
 
 .study_survey_element__option {
-  justify-self: start;
+  justify-self: flex-start;
 }
 
 .study_survey_element__radio {
-  justify-self: center;
+  justify-self: flex-end;
 }
-
