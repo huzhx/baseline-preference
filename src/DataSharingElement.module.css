@@ -17,7 +17,7 @@
 }
 
 .data_sharing_element__data_element {
-  justify-self: start;
+  justify-self: flex-start;
 }
 
 .data_sharing_element__data_element--required {
@@ -25,7 +25,7 @@
 }
 
 .data_sharing_element__checker {
-  justify-self: center;
+  justify-self: flex-end;
 }
 
 .data_sharing_element__checker input[type='checkbox']:checked {
