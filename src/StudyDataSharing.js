@@ -6,6 +6,7 @@ import DataSharingElement from './DataSharingElement';
 import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
+import Footer from './Footer';
 
 const StudyDataSharing = () => {
   const [sticky, setSticky] = useState(false);
@@ -41,19 +42,15 @@ const StudyDataSharing = () => {
     <div className={styles.study_data_sharing}>
       <Header title="Data Sharing Setting" />
       <div className={styles.study_data_sharing__body}>
-        <div className={styles.study_data_sharing__label}>Data Requested</div>
-        <div className={styles.study_data_sharing__form}>{content}</div>
-        <div className={styles.study_data_sharing__label}>*Required</div>
+        <div className={styles.study_data_sharing__form}>
+          <div className={styles.study_data_sharing__label}>Data Requested</div>
+          {content}
+          <div className={styles.study_data_sharing__label}>*Required</div>
+        </div>
       </div>
-      <div
-        className={
-          sticky
-            ? [styles.study_data_sharing__footer, styles['study_data_sharing__footer--hide']].join(' ')
-            : styles.study_data_sharing__footer
-        }
-      >
+      <Footer alignContentEvenly={false} sticky={sticky}>
         <Button label="Consent" />
-      </div>
+      </Footer>
     </div>
   );
 };

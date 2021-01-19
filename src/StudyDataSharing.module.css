@@ -4,14 +4,22 @@
   justify-content: center;
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
+  height: 100vh;
+  min-width: 270px;
 }
 
 .study_data_sharing__body {
-  overflow: auto;
   flex-grow: 1;
-  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.study_data_sharing__form {
+  width: 85%;
+  align-self: center;
   margin: 0.8em 1.5em 5.8em 1.5em;
-  padding: 1.2em 1.5em;
+  padding: 1.2em 2em;
   background-color: var(--background-color-light);
   border-radius: 2em;
   box-shadow: var(--box-shadow);
@@ -23,10 +31,7 @@
   line-height: 1.6em;
   letter-spacing: 0.05em;
   color: var(--primary-color);
-}
-
-.study_data_sharing__form {
-  margin: 1em 0;
+  padding: 0.8em 0;
 }
 
 .study_data_sharing__footer {
