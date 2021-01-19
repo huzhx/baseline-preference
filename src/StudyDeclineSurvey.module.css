@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
   height: 100vh;
+  min-width: 270px;
 }
 
 .study_survey__body {
@@ -16,6 +17,7 @@
 }
 
 .study_survey__form {
+  width: 85%;
   align-self: center;
   margin: 0.8em 1.5em 5.8em 1.5em;
   padding: 1.2em 2em;
