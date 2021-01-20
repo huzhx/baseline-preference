@@ -28,13 +28,15 @@ const StudyInfo = () => {
     <div className={styles.study_info}>
       <Header title="Study Information" />
       <div className={styles.study_info__body}>
-        <Study
-          institution={studyInfo.institution}
-          title={studyInfo.title}
-          purpose={studyInfo.purpose}
-          researchers={studyInfo.researchers}
-          dateRequested={studyInfo.dateRequested}
-        />
+        <div className={styles.study_info__content}>
+          <Study
+            institution={studyInfo.institution}
+            title={studyInfo.title}
+            purpose={studyInfo.purpose}
+            researchers={studyInfo.researchers}
+            dateRequested={studyInfo.dateRequested}
+          />
+        </div>
       </div>
       <Footer alignContentEvenly={false} sticky={sticky}>
         <Button label="Next" />
