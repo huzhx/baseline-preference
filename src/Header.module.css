@@ -16,3 +16,12 @@
   width: 100%;
   top: 0;
 }
+
+.header__main {
+  text-align: center;
+  margin: 1.2em 0;
+}
+
+.header--highlighted {
+  color: var(--primary-color);
+}
