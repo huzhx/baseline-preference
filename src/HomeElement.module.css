@@ -11,16 +11,17 @@
   border-radius: 2em;
   box-shadow: var(--box-shadow);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .home_element:hover {
+  color: var(--primary-color);
   background-color: var(--primary-color-light-extra);
 }
 
 .home_element__label {
   margin: 0 0.5em;
-  color: var(--primary-text-color);
   text-align: center;
   font-size: 1.18rem;
   font-weight: 650;
