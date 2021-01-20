@@ -5,6 +5,8 @@ import styles from './BaselinePreferenceForm.module.css';
 import BaselinePreferenceFormElement from './BaselinePreferenceFormElement';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
+import Header from './Header';
+import Footer from './Footer';
 
 const BaselinePreferenceForm = ({ cb }) => {
   const { dataElement } = useParams();
@@ -123,24 +125,13 @@ const BaselinePreferenceForm = ({ cb }) => {
 
   return (
     <div className={styles.baseline_preference_form}>
-      <div className={styles.baseline_preference_form__header}>
-        <div>
-          How Comfortable are you with sharing your{' '}
-          <span className={styles['baseline_preference_form__header--highlighted']}>
-            {dataElement.split('-').join(' ')} Information
-          </span>
-        </div>
+      <Header title="How Comfortable are you with sharing your" highlights={dataElement.split('-').join(' ')} />
+      <div className={styles.baseline_preference_form__body}>
+        <div className={styles.baseline_preference_form__content}>{baselinePreferenceFormElements}</div>
       </div>
-      <div className={styles.baseline_preference_form__body}>{baselinePreferenceFormElements}</div>
-      <div
-        className={
-          sticky
-            ? [styles.baseline_preference_form__footer, styles['baseline_preference_form__footer--hide']].join(' ')
-            : styles.baseline_preference_form__footer
-        }
-      >
+      <Footer alignContentEvenly={false} sticky={sticky}>
         <Button label={buttonLabel} handleClick={handleClick} />
-      </div>
+      </Footer>
     </div>
   );
 };

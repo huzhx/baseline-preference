@@ -4,51 +4,19 @@
   justify-content: center;
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
-}
-
-.baseline_preference_form__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5em 1.8em;
-  margin-bottom: 0.8em;
-  background-color: var(--background-color-light);
-  text-transform: capitalize;
-  font-size: 1.5rem;
-  font-weight: 650;
-  line-height: 1.4em;
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-  width: 100%;
-  top: 0;
-}
-
-.baseline_preference_form__header--highlighted {
-  color: var(--primary-color);
+  min-width: 350px;
 }
 
 .baseline_preference_form__body {
-  overflow: auto;
   flex-grow: 1;
-  padding: 0 2em;
-  margin-bottom: 5.8em;
-}
-
-.baseline_preference_form__footer {
   display: flex;
-  justify-content: flex-end;
-  background-color: var(--background-color-light);
-  margin-top: 0.8em;
-  position: fixed;
-  max-height: 5em;
-  width: 100%;
-  bottom: 0;
-  flex-shrink: 0;
-  transition: transform 400ms ease-in;
-  transform: translateY(0);
+  flex-direction: column;
+  justify-content: center;
 }
 
-.baseline_preference_form__footer--hide {
-  transform: translateY(100%);
+.baseline_preference_form__content {
+  width: 85%;
+  max-width: 550px;
+  align-self: center;
+  margin: 0.8em 1.5em 5.8em 1.5em;
 }

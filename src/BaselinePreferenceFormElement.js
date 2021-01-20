@@ -13,8 +13,9 @@ const BaselinePreferenceFormElement = ({ label, options, curCheckedValue, handle
               ? [
                   styles.baseline_preference_form_element__buttons__label,
                   styles['baseline_preference_form_element__buttons__label--checked'],
+                  styles.ripple,
                 ].join(' ')
-              : styles.baseline_preference_form_element__buttons__label
+              : [styles.baseline_preference_form_element__buttons__label, styles.ripple].join(' ')
           }
         >
           {option}
