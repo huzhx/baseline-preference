@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 
 const Button = ({ label, handleClick }) => {
   return (
-    <button className={styles.button} onClick={handleClick}>
+    <button className={[styles.button, styles.ripple].join(' ')} onClick={handleClick}>
       {label}
     </button>
   );
