@@ -1,22 +1,21 @@
-.baseline_preference_intro__container {
-  min-width: 330px;
-  width: 100vw;
-  height: 100vh;
+.baseline_preference_intro {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--background-color-dark);
+  height: 100vh;
+  min-width: 270px;
 }
 
-.baseline_preference_intro__content_container {
+.baseline_preference_intro__body {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   justify-content: center;
 }
 
-.baseline_preference_intro__button_container {
-  display: flex;
-  justify-content: flex-end;
-  background-color: var(--background-color-light);
+.baseline_preference_intro__content {
+  width: 85%;
+  align-self: center;
+  margin: 0.8em 1.5em 5.8em 1.5em;
 }
