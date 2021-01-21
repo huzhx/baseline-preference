@@ -12,9 +12,9 @@ const PortalPicker = () => {
       </div>
       <div className={styles.portal_picker__body}>
         <div className={styles.portal_picker__content}>
-          <div className={styles.portal_picker__content__label}>Please chose your portal</div>
-          <AuthButton stroke label="Provider Portal" />
+          <div className={styles.portal_picker__content__label}>Please choose your portal</div>
           <AuthButton label="Patient Portal" />
+          <AuthButton stroke label="Provider Portal" />
         </div>
       </div>
     </div>
