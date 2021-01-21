@@ -7,7 +7,7 @@
   box-shadow: var(--button-box-shadow);
   border: 0;
   color: var(--text-icon);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 550;
   line-height: 1.6em;
   letter-spacing: 0.2em;
@@ -26,6 +26,12 @@
 .auth_button:hover {
   background-color: var(--primary-color-dark-extra);
   color: var(--text-icon);
+}
+
+.auth_button--stroke:hover {
+  background-color: var(--background-color-light);
+  color: var(--primary-color-dark-extra);
+  box-shadow: var(--button-box-shadow-primay-extra);
 }
 
 .ripple {
