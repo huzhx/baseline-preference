@@ -29,6 +29,7 @@
 .study_data_sharing__label_container {
   display: grid;
   grid-template-columns: 3fr 1fr;
+  column-gap: 3%;
   grid-template-rows: auto;
   align-items: center;
 }
