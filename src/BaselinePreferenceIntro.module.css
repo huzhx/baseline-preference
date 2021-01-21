@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: var(--background-color-dark);
-  height: 100vh;
+  min-height: 100vh;
   min-width: 270px;
 }
 

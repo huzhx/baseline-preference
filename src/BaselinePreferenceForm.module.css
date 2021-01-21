@@ -4,6 +4,7 @@
   justify-content: center;
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
+  min-height: 100vh;
   min-width: 350px;
 }
 
