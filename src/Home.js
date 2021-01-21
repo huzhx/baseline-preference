@@ -11,7 +11,7 @@ const Home = () => {
   const [sticky, setSticky] = useState(false);
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const isShow = currPos.y > prevPos.y;
+      const isShow = currPos.y <= prevPos.y;
       if (isShow !== sticky) setSticky(isShow);
     },
     [sticky]
