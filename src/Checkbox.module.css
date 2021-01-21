@@ -12,6 +12,7 @@
   border: 0.16em solid var(--primary-color);
   transform: rotate(-90deg);
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .checkbox .overlay .icon {
