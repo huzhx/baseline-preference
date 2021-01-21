@@ -1,0 +1,50 @@
+.study_data_sharing_review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: var(--background-color-dark);
+  min-height: 100vh;
+  min-width: 270px;
+}
+
+.study_data_sharing_review__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.study_data_sharing_review__content {
+  width: 85%;
+  max-width: 550px;
+  align-self: center;
+  margin: 0.8em 1.5em 5.8em 1.5em;
+  padding: 1.2em 2em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+}
+
+.study_data_sharing_review__label_container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.study_data_sharing_review__label {
+  max-width: 5em;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  color: var(--primary-color);
+  padding: 0.8em 0;
+  justify-self: flex-start;
+  text-align: left;
+}
+
+.align_left {
+  justify-self: flex-start;
+}
