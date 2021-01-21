@@ -34,22 +34,3 @@
   color: var(--primary-color);
   padding: 0.8em 0;
 }
-
-.study_data_sharing__footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  background-color: var(--background-color-light);
-  margin-top: 0.8em;
-  position: fixed;
-  max-height: 5em;
-  width: 100%;
-  bottom: 0;
-  flex-shrink: 0;
-  transition: transform 400ms ease-in;
-  transform: translateY(0);
-}
-
-.study_data_sharing__footer--hide {
-  transform: translateY(100%);
-}
