@@ -36,16 +36,21 @@ const StudyDataSharing = () => {
 
   const content = [];
   for (let element of dataElements) {
-    content.push(<DataSharingElement key={element} dataElement={element} isRequired={requiredElements.has(element)} />);
+    content.push(<DataSharingElement key={element} dataElement={element} required={requiredElements.has(element)} />);
   }
   return (
     <div className={styles.study_data_sharing}>
       <Header title="Data Sharing Setting" />
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__form}>
-          <div className={styles.study_data_sharing__label}>Data Requested</div>
+          <div className={styles.study_data_sharing__label_container}>
+            <span className={[styles.study_data_sharing__label, styles.align_left].join(' ')}>Data Requested</span>
+            <span className={styles.study_data_sharing__label}>Consent to Share</span>
+          </div>
           {content}
-          <div className={styles.study_data_sharing__label}>*Required</div>
+          <div className={styles.study_data_sharing__label_container}>
+            <span className={[styles.study_data_sharing__label, styles.align_left].join(' ')}>*Required</span>
+          </div>
         </div>
       </div>
       <Footer alignContentEvenly={false} sticky={sticky}>

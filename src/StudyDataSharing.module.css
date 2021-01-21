@@ -26,11 +26,25 @@
   box-shadow: var(--box-shadow);
 }
 
+.study_data_sharing__label_container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
 .study_data_sharing__label {
+  max-width: 5em;
   font-size: 1rem;
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
   color: var(--primary-color);
   padding: 0.8em 0;
+  justify-self: flex-start;
+  text-align: left;
+}
+
+.align_left {
+  justify-self: flex-start;
 }
