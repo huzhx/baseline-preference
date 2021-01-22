@@ -31,3 +31,8 @@
 .checkbox input:checked ~ .overlay .icon {
   display: block;
 }
+
+.checkbox .overlay svg {
+  width: 1em;
+  height: 1em;
+}

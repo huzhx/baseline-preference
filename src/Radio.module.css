@@ -32,3 +32,8 @@
 .radio input:checked ~ .overlay .icon {
   display: block;
 }
+
+.radio .overlay svg {
+  width: 1em;
+  height: 1em;
+}
