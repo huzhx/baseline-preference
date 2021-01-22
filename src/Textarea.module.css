@@ -6,12 +6,12 @@
 .input {
   width: 100%;
   font-size: 1rem;
+  font-weight: 650;
   font-family: inherit;
   padding: 0.8em 1em;
-  background-color: var(--background-color-light);
-  border-radius: 2em;
+  background-color: var(--background-color-dark);
   border: 2px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.3em;
+  border-radius: 1.2em;
   transition: 0.08s box-shadow ease-in-out;
 }
 
@@ -34,4 +34,5 @@
   border-color: var(--primary-color);
   box-shadow: 0 0 0.2em rgba(47, 188, 161, 0.8);
   outline: 0.8em solid transparent;
+  background-color: var(--background-color-light);
 }
