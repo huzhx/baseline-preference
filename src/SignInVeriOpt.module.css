@@ -1,0 +1,37 @@
+.sign_in_veri_opt {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: var(--background-color-dark);
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+.sign_in_veri_opt__body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sign_in_veri_opt__content {
+  width: 85%;
+  max-width: 550px;
+  align-self: center;
+  margin: 0.8em 1.5em 5.8em 1.5em;
+  padding: 1.2em 2em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+}
+
+.sign_in_veri_opt__question {
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  padding: 0.8em 0;
+}
