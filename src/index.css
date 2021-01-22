@@ -16,6 +16,7 @@
   --button-box-shadow-light: 0 0 0.3em rgba(0, 0, 0, 0.5);
   --button-box-shadow-primay: 0 0 0.3em #31b39b;
   --button-box-shadow-primay-extra: 0 0 0.3em #2a9481;
+  font-size: 60%;
 }
 
 *,
@@ -42,4 +43,10 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@media (min-width: 768px) {
+  :root {
+    font-size: 100%;
+  }
 }
