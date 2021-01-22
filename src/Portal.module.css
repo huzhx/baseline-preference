@@ -1,4 +1,4 @@
-.sign_in {
+.portal {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -6,7 +6,7 @@
   min-width: 320px;
 }
 
-.sign_in__header {
+.portal__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +24,7 @@
   top: 0;
 }
 
-.sign_in__header__secondary {
+.portal__header__secondary {
   font-size: 1.8rem;
   text-transform: none;
   margin-right: 5em;
@@ -38,11 +38,11 @@
   color: var(--secondary-text-color);
 }
 
-.sign_in__header__main {
+.portal__header__main {
   margin: 1.2em 0;
 }
 
-.sign_in__body {
+.portal__body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@
   min-height: 40vh;
 }
 
-.sign_in__content {
+.portal__content {
   display: flex;
   flex-direction: column;
   width: 85%;
@@ -60,7 +60,7 @@
   max-width: 500px;
 }
 
-.sign_in__content__label {
+.portal__content__label {
   font-size: 1.3rem;
   font-weight: 650;
   line-height: 1.6em;
