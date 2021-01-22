@@ -125,7 +125,11 @@ const BaselinePreferenceForm = ({ cb }) => {
 
   return (
     <div className={styles.baseline_preference_form}>
-      <Header title="How Comfortable are you with sharing your" highlights={dataElement.split('-').join(' ')} />
+      <Header
+        title="How comfortable are you with sharing your"
+        highlights={dataElement.split('-').join(' ')}
+        addon="information"
+      />
       <div className={styles.baseline_preference_form__body}>
         <div className={styles.baseline_preference_form__content}>{baselinePreferenceFormElements}</div>
       </div>
