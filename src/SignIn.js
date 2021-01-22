@@ -7,7 +7,7 @@ import IconCircleButton from './IconCircleButton';
 const SignIn = () => {
   return (
     <div className={styles.sign_in}>
-      <Header title="Sign in with Social Network" />
+      <Header title="Sign in with Social Networks" />
       <div className={styles.sign_in__body}>
         <div className={styles.sign_in__content}>
           <div className={styles.sign_in__content__button_container}>
