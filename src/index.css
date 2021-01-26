@@ -62,3 +62,15 @@ code {
     font-size: 100%;
   }
 }
+
+@media (min-width: 1000px) {
+  :root {
+    font-size: 120%;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    font-size: 150%;
+  }
+}
