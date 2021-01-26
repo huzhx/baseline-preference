@@ -5,7 +5,7 @@
   align-items: center;
   background-color: var(--background-color-dark);
   min-height: 100vh;
-  min-width: 320px;
+  min-width: 20em;
 }
 
 .home__body {

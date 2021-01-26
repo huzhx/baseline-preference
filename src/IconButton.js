@@ -12,7 +12,7 @@ const IconButton = ({ label, children, isActive, handleOnClick }) => {
       }
       onClick={handleOnClick}
     >
-      <span>{children}</span>
+      <span className={styles.icon_button__svg}>{children}</span>
       <div className={styles.icon_button__label}>{label}</div>
     </div>
   );

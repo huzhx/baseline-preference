@@ -4,7 +4,7 @@
   justify-content: center;
   background-color: var(--background-color-dark);
   min-height: 100vh;
-  min-width: 320px;
+  min-width: 20em;
 }
 
 .baseline_preference_intro__body {

@@ -6,7 +6,7 @@
   flex-wrap: nowrap;
   background-color: var(--background-color-dark);
   min-height: 100vh;
-  min-width: 320px;
+  min-width: 20em;
 }
 
 .sign_in_veri_enter_code__body {

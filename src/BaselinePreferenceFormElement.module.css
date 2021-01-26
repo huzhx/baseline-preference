@@ -14,7 +14,7 @@
   justify-content: flex-start;
   padding: 0.8em 0;
   color: var(--primary-text-color);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
@@ -32,8 +32,8 @@
 
 .baseline_preference_form_element__buttons__label {
   display: inline-block;
-  min-width: 117px;
-  padding: 0.45em 3em;
+  min-width: 9em;
+  padding: 1em 3.25em;
   background-color: var(--background-color-light);
   border-radius: 2em;
   box-shadow: var(--button-box-shadow-light);
@@ -47,6 +47,7 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
+  outline: 0;
 }
 
 .baseline_preference_form_element__buttons label:hover {
