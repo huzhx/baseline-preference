@@ -45,6 +45,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+@media (min-width: 400px) {
+  :root {
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 500px) {
+  :root {
+    font-size: 80%;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
     font-size: 100%;
