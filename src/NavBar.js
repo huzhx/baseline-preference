@@ -2,18 +2,10 @@ import React from 'react';
 
 import styles from './NavBar.module.css';
 
-const NavBar = ({ children, alignStart }) => {
+const NavBar = ({ children }) => {
   return (
     <div className={styles.nav_bar}>
-      <div
-        className={
-          alignStart
-            ? [styles.footer__content, styles['footer__content--flex-start']].join(' ')
-            : styles.footer__content
-        }
-      >
-        {children}
-      </div>
+      <div className={styles.footer__content}>{children}</div>
     </div>
   );
 };
