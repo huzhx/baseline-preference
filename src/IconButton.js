@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './IconButton.module.css';
 
-const IconButton = ({ label, children, isActive, handleOnClick }) => {
+const IconButton = ({ label, children, isActive, handleOnClick, flat }) => {
   return (
     <div
       className={
@@ -12,8 +12,10 @@ const IconButton = ({ label, children, isActive, handleOnClick }) => {
       }
       onClick={handleOnClick}
     >
-      <span className={styles.icon_button__svg}>{children}</span>
-      <div className={styles.icon_button__label}>{label}</div>
+      <div className={flat ? [styles.icon_button__layout, styles.flat].join(' ') : styles.icon_button__layout}>
+        <span className={styles.icon_button__svg}>{children}</span>
+        <div className={[styles.icon_button__label, styles.no_select].join(' ')}>{label}</div>
+      </div>
     </div>
   );
 };
