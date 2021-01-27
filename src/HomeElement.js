@@ -12,7 +12,7 @@ const HomeElement = ({ label, unreadNum = 0 }) => {
       ) : (
         <div></div>
       )}
-      <div className={styles.home_element__label}>{label}</div>
+      <div className={[styles.home_element__label, styles.no_select].join(' ')}>{label}</div>
     </div>
   );
 };
