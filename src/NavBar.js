@@ -5,7 +5,7 @@ import styles from './NavBar.module.css';
 const NavBar = ({ children }) => {
   return (
     <div className={styles.nav_bar}>
-      <div className={styles.footer__content}>{children}</div>
+      <div className={styles.nav_bar__content}>{children}</div>
     </div>
   );
 };

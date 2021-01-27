@@ -8,9 +8,11 @@
   padding: 0 0.5em;
 }
 
-.footer__content {
+.nav_bar__content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 100%;
+  max-width: calc(80vw+10em);
+  margin: auto;
 }
