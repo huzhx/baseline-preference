@@ -38,7 +38,9 @@ const Home = () => {
           </IconButton>
         </NavBar>
       </div>
-      <Header title="iAGREE" />
+      <div className={styles.home__header}>
+        <Header title="iAGREE" />
+      </div>
       <div className={styles.home__body}>
         <div className={styles.home__content}>
           <HomeElement label="New Data Requests" unreadNum="2" />
