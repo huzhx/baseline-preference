@@ -57,7 +57,13 @@ code {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+  :root {
+    font-size: 90%;
+  }
+}
+
+@media (min-width: 2048px) {
   :root {
     font-size: 100%;
   }
