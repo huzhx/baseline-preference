@@ -22,3 +22,15 @@
   align-self: center;
   margin: 0.8em 1.5em 5.8em 1.5em;
 }
+
+.home__footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .home__footer {
+    display: none;
+  }
+}
