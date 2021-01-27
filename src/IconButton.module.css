@@ -3,7 +3,6 @@
   cursor: pointer;
   color: var(--secondary-text-color);
   transition: 0.8s;
-  text-transform: capitalize;
 }
 
 .icon_button:hover {
