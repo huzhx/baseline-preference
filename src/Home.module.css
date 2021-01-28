@@ -35,8 +35,6 @@
 
 .home__header {
   width: 100%;
-  visibility: visible;
-  transition: all 0.5s;
 }
 
 @media (min-width: 768px) {
@@ -51,7 +49,6 @@
   }
 
   .home__header {
-    visibility: hidden;
-    opacity: 0;
+    display: none;
   }
 }
