@@ -33,8 +33,6 @@
 
 .baseline_preference_intro__header {
   width: 100%;
-  visibility: visible;
-  transition: all 0.5s;
 }
 
 .baseline_preference_intro__button_container {
@@ -53,8 +51,7 @@
   }
 
   .baseline_preference_intro__header {
-    visibility: hidden;
-    opacity: 0;
+    display: none;
   }
 
   .baseline_preference_intro__button_container {
