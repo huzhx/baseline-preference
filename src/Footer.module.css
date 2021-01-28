@@ -23,5 +23,5 @@
 }
 
 .footer__content--alignEvenly {
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
