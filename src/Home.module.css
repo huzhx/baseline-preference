@@ -39,7 +39,7 @@
   transition: all 0.5s;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .home__footer {
     display: none;
   }
