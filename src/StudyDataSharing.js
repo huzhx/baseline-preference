@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import styles from './StudyDataSharing.module.css';
-
-import DataSharingElement from './DataSharingElement';
+import StudyDataSharingForm from './StudyDataSharingForm';
 import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
@@ -36,10 +35,6 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
-  const content = [];
-  for (let element of dataElements) {
-    content.push(<DataSharingElement key={element} dataElement={element} required={requiredElements.has(element)} />);
-  }
   return (
     <div className={styles.study_data_sharing}>
       <div className={styles.study_data_sharing__nav_bar}>
@@ -82,16 +77,7 @@ const StudyDataSharing = () => {
       </div>
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__content}>
-          <div className={styles.study_data_sharing__form}>
-            <div className={styles.study_data_sharing__label_container}>
-              <span className={[styles.study_data_sharing__label, styles.align_left].join(' ')}>Data Requested</span>
-              <span className={styles.study_data_sharing__label}>Consent to Share</span>
-            </div>
-            {content}
-            <div className={styles.study_data_sharing__label_container}>
-              <span className={[styles.study_data_sharing__label, styles.align_left].join(' ')}>*Required</span>
-            </div>
-          </div>
+          <StudyDataSharingForm dataElements={dataElements} requiredElements={requiredElements} />
           <div className={styles.study_data_sharing__button_container}>
             <Button label="Consent" />
           </div>

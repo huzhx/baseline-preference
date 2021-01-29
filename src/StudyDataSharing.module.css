@@ -22,38 +22,6 @@
   margin: 0.8em 1.5em 5.8em 1.5em;
 }
 
-.study_data_sharing__form {
-  margin: 0.8em 0 1.8em 0;
-  padding: 1.2em 2em;
-  background-color: var(--background-color-light);
-  border-radius: 2em;
-  box-shadow: var(--box-shadow);
-}
-
-.study_data_sharing__label_container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  column-gap: 3%;
-  grid-template-rows: auto;
-  align-items: center;
-}
-
-.study_data_sharing__label {
-  max-width: 5em;
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1.6em;
-  letter-spacing: 0.05em;
-  color: var(--primary-color);
-  padding: 0.8em 0;
-  justify-self: flex-start;
-  text-align: left;
-}
-
-.align_left {
-  justify-self: flex-start;
-}
-
 .study_data_sharing__footer {
   display: flex;
   flex-direction: row;
