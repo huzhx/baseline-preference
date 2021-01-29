@@ -6,6 +6,8 @@ import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
 import Footer from './Footer';
+import IconButton from './IconButton';
+import NavBar from './NavBar';
 
 const StudyDataSharingReview = () => {
   const [sticky, setSticky] = useState(false);
@@ -130,25 +132,69 @@ const StudyDataSharingReview = () => {
 
   return (
     <div className={styles.study_data_sharing_review}>
-      <Header title="Data Sharing" />
+      <div className={styles.study_data_sharing_review__nav_bar}>
+        <NavBar>
+          <IconButton label="iAgree" flat>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </IconButton>
+          <IconButton label="My profile" flat>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </IconButton>
+        </NavBar>
+      </div>
+      <div className={styles.study_data_sharing_review__header}>
+        <Header title="Data Sharing" />
+      </div>
+      <div className={styles['study_data_sharing_review__header--noBackground']}>
+        <Header title="Data Sharing" noBackground />
+      </div>
       <div className={styles.study_data_sharing_review__body}>
         <div className={styles.study_data_sharing_review__content}>
-          <div className={styles.study_data_sharing_review__label_container}>
-            <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>
-              Data Requested
-            </span>
-            <span className={styles.study_data_sharing_review__label}>Data Shared</span>
-            <span className={styles.study_data_sharing_review__label}>Data Used</span>
+          <div className={styles.study_data_sharing_review__form}>
+            <div className={styles.study_data_sharing_review__label_container}>
+              <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>
+                Data Requested
+              </span>
+              <span className={styles.study_data_sharing_review__label}>Data Shared</span>
+              <span className={styles.study_data_sharing_review__label}>Data Used</span>
+            </div>
+            {content}
+            <div className={styles.study_data_sharing_review__label_container}>
+              <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>*Required</span>
+            </div>
           </div>
-          {content}
-          <div className={styles.study_data_sharing_review__label_container}>
-            <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>*Required</span>
+          <div className={styles.study_data_sharing_review__button_container}>
+            <Button label="Submit" />
           </div>
         </div>
       </div>
-      <Footer alignContentEvenly={false} sticky={sticky}>
-        <Button label="Submit" />
-      </Footer>
+      <div className={styles.study_data_sharing_review__footer}>
+        <Footer alignContentEvenly={false} sticky={sticky}>
+          <Button label="Submit" />
+        </Footer>
+      </div>
     </div>
   );
 };
