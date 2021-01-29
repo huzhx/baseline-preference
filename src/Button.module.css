@@ -19,6 +19,7 @@
 
 .button:hover {
   background-color: var(--primary-color-dark);
+  box-shadow: none;
 }
 
 .ripple {
