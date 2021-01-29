@@ -21,3 +21,61 @@
   align-self: center;
   margin: 0.8em 1.5em 5.8em 1.5em;
 }
+
+.study_info__footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.study_info__nav_bar {
+  display: none;
+}
+
+.study_info__header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.study_info__header--noBackground {
+  display: none;
+}
+
+.study_info__button_container {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .study_info__footer {
+    display: none;
+  }
+
+  .study_info__nav_bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .study_info__header {
+    display: none;
+  }
+
+  .study_info__button_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .study_info__header--noBackground {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 8em auto 0 auto;
+  }
+
+  .study_info__body {
+    justify-content: flex-start;
+  }
+}
