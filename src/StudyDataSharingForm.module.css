@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.three_columns {
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
 .study_data_sharing_form__label {
   max-width: 5em;
   font-size: 1rem;
