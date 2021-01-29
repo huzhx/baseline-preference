@@ -16,6 +16,7 @@
 
 .study:hover {
   box-shadow: none;
+  background-color: var(--primary-color-light-extra);
 }
 
 .study__content {

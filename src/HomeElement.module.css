@@ -18,7 +18,7 @@
 
 .home_element:hover {
   box-shadow: none;
-  color: var(--primary-color-dark);
+  background-color: var(--primary-color-light-extra);
 }
 
 .home_element__label {
