@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './StudyDataSharingReview.module.css';
-import DataSharingElement from './DataSharingElement';
+import StudyDataSharingForm from './StudyDataSharingForm';
 import Header from './Header';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
@@ -116,20 +116,6 @@ const StudyDataSharingReview = () => {
     familyHistoryState,
   ]);
 
-  const content = [];
-  for (let element of dataElements) {
-    content.push(
-      <DataSharingElement
-        key={element}
-        dataElement={element}
-        required={requiredElements.has(element)}
-        checked={dataElementsStateMap.get(element)}
-        used={usedElements.has(element)}
-        onChange={dataElementsHandleChangeMap.get(element)}
-      />
-    );
-  }
-
   return (
     <div className={styles.study_data_sharing_review}>
       <div className={styles.study_data_sharing_review__nav_bar}>
@@ -172,19 +158,13 @@ const StudyDataSharingReview = () => {
       </div>
       <div className={styles.study_data_sharing_review__body}>
         <div className={styles.study_data_sharing_review__content}>
-          <div className={styles.study_data_sharing_review__form}>
-            <div className={styles.study_data_sharing_review__label_container}>
-              <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>
-                Data Requested
-              </span>
-              <span className={styles.study_data_sharing_review__label}>Data Shared</span>
-              <span className={styles.study_data_sharing_review__label}>Data Used</span>
-            </div>
-            {content}
-            <div className={styles.study_data_sharing_review__label_container}>
-              <span className={[styles.study_data_sharing_review__label, styles.align_left].join(' ')}>*Required</span>
-            </div>
-          </div>
+          <StudyDataSharingForm
+            dataElements={dataElements}
+            requiredElements={requiredElements}
+            usedElements={usedElements}
+            dataElementsStateMap={dataElementsStateMap}
+            dataElementsHandleChangeMap={dataElementsHandleChangeMap}
+          />
           <div className={styles.study_data_sharing_review__button_container}>
             <Button label="Submit" />
           </div>
