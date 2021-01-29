@@ -36,6 +36,7 @@
 .study_survey__comment {
   opacity: 1;
   transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+  margin-bottom: 0.8em;
 }
 
 .study_survey__comment--hidden {
