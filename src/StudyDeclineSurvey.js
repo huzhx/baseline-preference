@@ -35,14 +35,21 @@ const StudyDeclineSurvey = () => {
 
   const [ifOtherSelectedState, setIfOtherSelectedState] = useState(false);
 
+  const [commentState, setCommentState] = useState('');
+  const handleCommentChange = (event) => {
+    setCommentState(event.target.value);
+  };
+
   useEffect(() => {
     console.log({ declineState });
+    console.log({ commentState });
     if (declineState === options[2]) {
       setIfOtherSelectedState(true);
     } else {
       setIfOtherSelectedState(false);
+      setCommentState('');
     }
-  }, [declineState, options]);
+  }, [declineState, options, commentState]);
 
   const radioGroup = [];
   for (let option of options) {
@@ -108,7 +115,7 @@ const StudyDeclineSurvey = () => {
                   : [styles.study_survey__comment, styles['study_survey__comment--hidden']].join(' ')
               }
             >
-              <Textarea placeholder="Please specify" />
+              <Textarea placeholder="Please specify" onChange={handleCommentChange} value={commentState} />
             </div>
           </div>
           <div className={styles.study_survey__button_container}>
