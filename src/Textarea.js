@@ -7,10 +7,14 @@ const Textarea = ({ label, placeholder, onChange, value, rows }) => {
 
   useEffect(() => {
     textarea.current.focus();
+    console.log(textarea.current.scrollHeight);
     if (value.trim() === '') {
       textarea.current.rows = 2;
     } else {
-      textarea.current.rows = textarea.current.scrollHeight / 25;
+      textarea.current.rows = textarea.current.scrollHeight / 35;
+      if (textarea.current.rows < 2) {
+        textarea.current.rows = 2;
+      }
     }
   }, [value]);
 
