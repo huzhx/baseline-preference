@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './StudyDeclineSurvey.module.css';
 import Header from './Header';
-import StudyDeclineSurveyElement from './StudyDeclineSurveyElement';
 import Footer from './Footer';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
-import Textarea from './Textarea';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import StudyDeclineSurveyFrom from './StudyDeclineSurveyForm';
 
 const StudyDeclineSurvey = () => {
   const [sticky, setSticky] = useState(false);
@@ -50,18 +49,6 @@ const StudyDeclineSurvey = () => {
       setCommentState('');
     }
   }, [declineState, options, commentState]);
-
-  const radioGroup = [];
-  for (let option of options) {
-    radioGroup.push(
-      <StudyDeclineSurveyElement
-        key={option}
-        option={option}
-        curCheckedValue={declineState}
-        handleOnChange={handleDeclineChange}
-      />
-    );
-  }
 
   return (
     <div className={styles.study_survey}>
@@ -105,19 +92,15 @@ const StudyDeclineSurvey = () => {
       </div>
       <div className={styles.study_survey__body}>
         <div className={styles.study_survey__content}>
-          <div className={styles.study_survey__form}>
-            <div className={styles.study_survey__question}>{question}</div>
-            {radioGroup}
-            <div
-              className={
-                ifOtherSelectedState
-                  ? styles.study_survey__comment
-                  : [styles.study_survey__comment, styles['study_survey__comment--hidden']].join(' ')
-              }
-            >
-              <Textarea placeholder="Please specify" onChange={handleCommentChange} value={commentState} />
-            </div>
-          </div>
+          <StudyDeclineSurveyFrom
+            question={question}
+            options={options}
+            declineState={declineState}
+            handleDeclineChange={handleDeclineChange}
+            ifOtherSelectedState={ifOtherSelectedState}
+            handleCommentChange={handleCommentChange}
+            commentState={commentState}
+          />
           <div className={styles.study_survey__button_container}>
             <Button label="Submit" />
           </div>

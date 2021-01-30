@@ -16,33 +16,6 @@
   justify-content: center;
 }
 
-.study_survey__form {
-  margin: 0.8em 0 1.8em 0;
-  padding: 1.2em 2em;
-  background-color: var(--background-color-light);
-  border-radius: 2em;
-  box-shadow: var(--box-shadow);
-}
-
-.study_survey__question {
-  color: var(--primary-text-color);
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1.6em;
-  letter-spacing: 0.05em;
-  padding: 0.8em 0;
-}
-
-.study_survey__comment {
-  opacity: 1;
-  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-  margin-bottom: 0.8em;
-}
-
-.study_survey__comment--hidden {
-  opacity: 0;
-}
-
 .study_survey__content {
   width: 85%;
   max-width: 40em;
