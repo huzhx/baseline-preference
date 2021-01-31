@@ -1,4 +1,4 @@
-.study_survey_element {
+.radio_with_option {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: auto;
@@ -11,10 +11,10 @@
   letter-spacing: 0.05em;
 }
 
-.study_survey_element__option {
+.radio_with_option__option {
   justify-self: flex-start;
 }
 
-.study_survey_element__radio {
+.radio_with_option__radio {
   justify-self: flex-end;
 }
