@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './SignInVeriOpt.module.css';
 import Header from './Header';
-import StudyDeclineSurveyElement from './StudyDeclineSurveyElement';
+import RadioWithOption from './RadioWithOption';
 import Footer from './Footer';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
@@ -36,12 +36,7 @@ const SignInVeriOpt = () => {
   const radioGroup = [];
   for (let option of options) {
     radioGroup.push(
-      <StudyDeclineSurveyElement
-        key={option}
-        option={option}
-        curCheckedValue={veriOptState}
-        handleOnChange={handleOnChange}
-      />
+      <RadioWithOption key={option} option={option} curCheckedValue={veriOptState} handleOnChange={handleOnChange} />
     );
   }
 

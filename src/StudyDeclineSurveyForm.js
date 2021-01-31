@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './StudyDeclineSurveyForm.module.css';
-import StudyDeclineSurveyElement from './StudyDeclineSurveyElement';
+import RadioWithOption from './RadioWithOption';
 import Textarea from './Textarea';
 
 const StudyDeclineSurveyForm = ({
@@ -16,7 +16,7 @@ const StudyDeclineSurveyForm = ({
   const radioGroup = [];
   for (let option of options) {
     radioGroup.push(
-      <StudyDeclineSurveyElement
+      <RadioWithOption
         key={option}
         option={option}
         curCheckedValue={declineState}
