@@ -67,3 +67,52 @@
   color: var(--primary-color);
   margin: 0.5em 1.2em;
 }
+
+.custom-shape-divider-bottom-1612077601 {
+  visibility: hidden;
+}
+
+@media (min-width: 768px) {
+  .portal_picker {
+    justify-content: center;
+  }
+  .portal_picker__header {
+    background-color: var(--primary-color);
+    border-radius: 0;
+    padding: 0;
+    padding-top: 5em;
+    min-height: 25vh;
+  }
+  .portal_picker__body {
+    background-color: transparent;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+  .portal_picker__content {
+    margin: 1.8em 1.5em;
+  }
+
+  .custom-shape-divider-bottom-1612077601 {
+    visibility: visible;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    background-color: var(--primary-color);
+  }
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(218% + 1.3px);
+    height: 254px;
+  }
+
+  .shape-fill {
+    fill: var(--text-icon);
+  }
+
+  .secondary_color {
+    color: var(--text-icon);
+  }
+}
