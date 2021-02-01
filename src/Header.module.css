@@ -59,7 +59,7 @@
 
 .header__back_button:hover {
   color: var(--primary-color-dark);
-  background-color: var(--primary-color-light-extra);
+  background-color: var(--background-color-primary);
 }
 
 .ripple {
