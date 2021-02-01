@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './StudyDeclineSurvey.module.css';
 import Header from './Header';
@@ -50,6 +51,9 @@ const StudyDeclineSurvey = () => {
     }
   }, [declineState, options, commentState]);
 
+  const history = useHistory();
+  const goBack = () => history.goBack();
+
   return (
     <div className={styles.study_survey}>
       <div className={styles.study_survey__nav_bar}>
@@ -85,7 +89,7 @@ const StudyDeclineSurvey = () => {
         </NavBar>
       </div>
       <div className={styles.study_survey__header}>
-        <Header title="Sorry to see you go" />
+        <Header title="Sorry to see you go" hasGoBack />
       </div>
       <div className={styles['study_survey__header--noBackground']}>
         <Header title="Sorry to see you go" noBackground />
@@ -102,6 +106,7 @@ const StudyDeclineSurvey = () => {
             commentState={commentState}
           />
           <div className={styles.study_survey__button_container}>
+            <Button label="Back" secondary handleClick={goBack} />
             <Button label="Submit" />
           </div>
         </div>
