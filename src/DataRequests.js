@@ -31,7 +31,7 @@ const DataRequests = () => {
   const requests = [];
   for (let request of newRequests) {
     requests.push(
-      <Study key={request.title} institution={request.institution} title={request.title} link="/study-info" />
+      <Study key={request.title} institution={request.institution} title={request.title} clickable link="/study-info" />
     );
   }
   return (
