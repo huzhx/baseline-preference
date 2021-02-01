@@ -101,7 +101,7 @@
     background-color: var(--primary-color);
   }
 
-  svg {
+  .portal__background svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
@@ -119,7 +119,7 @@
 }
 
 @media (min-width: 1024px) {
-  svg {
+  .portal__background svg {
     height: 0;
   }
   .portal__body {

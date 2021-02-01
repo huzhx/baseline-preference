@@ -99,7 +99,7 @@
     background-color: var(--primary-color);
   }
 
-  svg {
+  .portal_picker__background svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
@@ -117,7 +117,7 @@
 }
 
 @media (min-width: 1024px) {
-  svg {
+  .portal_picker__background svg {
     height: 0;
   }
   .portal_picker__body {
