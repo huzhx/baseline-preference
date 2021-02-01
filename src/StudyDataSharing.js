@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './StudyDataSharing.module.css';
 import StudyDataSharingForm from './StudyDataSharingForm';
@@ -35,6 +36,11 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
+  let path = '/';
+  const history = useHistory();
+  const goBack = () => history.goBack();
+  const goForward = () => history.push(path);
+
   return (
     <div className={styles.study_data_sharing}>
       <div className={styles.study_data_sharing__nav_bar}>
@@ -70,7 +76,7 @@ const StudyDataSharing = () => {
         </NavBar>
       </div>
       <div className={styles.study_data_sharing__header}>
-        <Header title="Data Sharing Setting" />
+        <Header title="Data Sharing Setting" hasGoBack />
       </div>
       <div className={styles['study_data_sharing__header--noBackground']}>
         <Header title="Data Sharing Setting" noBackground />
@@ -79,13 +85,14 @@ const StudyDataSharing = () => {
         <div className={styles.study_data_sharing__content}>
           <StudyDataSharingForm dataElements={dataElements} requiredElements={requiredElements} />
           <div className={styles.study_data_sharing__button_container}>
-            <Button label="Consent" />
+            <Button label="Back" secondary handleClick={goBack} />
+            <Button label="Consent" handleClick={goForward} />
           </div>
         </div>
       </div>
       <div className={styles.study_data_sharing__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Consent" />
+          <Button label="Consent" handleClick={goForward} />
         </Footer>
       </div>
     </div>
