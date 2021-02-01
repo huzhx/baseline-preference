@@ -45,7 +45,7 @@ function App() {
         <Route path="/portal/patient">
           <Portal portalType="patient" />
         </Route>
-        <Route path="/sign-in/verification-options">
+        <Route path="/sign-in/verify-options">
           <SignInVeriOpt />
         </Route>
         <Route path="/sign-in/enter-code">
