@@ -80,3 +80,8 @@
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+
+.link {
+  color: var(--primary-text-color);
+  text-decoration: none;
+}
