@@ -7,7 +7,7 @@ import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
-import TextInput from './TextInput';
+import SignInVeriEnterCodeForm from './SignInVeriEnterCodeForm';
 
 const SignInVeriEnterCode = () => {
   const [sticky, setSticky] = useState(false);
@@ -72,17 +72,7 @@ const SignInVeriEnterCode = () => {
       </div>
       <div className={styles.sign_in_veri_enter_code__body}>
         <div className={styles.sign_in_veri_enter_code__content}>
-          <div className={styles.sign_in_veri_enter_code__form}>
-            <div className={styles.sign_in_veri_enter_code__label}>{label}</div>
-            <div className={styles.sign_in_veri_enter_code__input}>
-              <TextInput type="number" placeholder="Passcode" handleOnChange={handleOnChange} />
-            </div>
-            <div className={styles.sign_in_veri_enter_code__controller_container}>
-              <div className={[styles.sign_in_veri_enter_code__controller, styles.ripple, styles.no_select].join(' ')}>
-                <span>Send another passcode</span>
-              </div>
-            </div>
-          </div>
+          <SignInVeriEnterCodeForm label={label} handleOnChange={handleOnChange} />
           <div className={styles.sign_in_veri_enter_code__button_container}>
             <Button label="Submit" />
           </div>
