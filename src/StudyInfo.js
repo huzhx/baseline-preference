@@ -61,7 +61,7 @@ const StudyInfo = () => {
         </NavBar>
       </div>
       <div className={styles.study_info__header}>
-        <Header title="Study Information" />
+        <Header title="Study Information" hasGoBack />
       </div>
       <div className={styles['study_info__header--noBackground']}>
         <Header title="Study Information" noBackground />
