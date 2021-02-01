@@ -76,6 +76,7 @@ const StudyInfo = () => {
             dateRequested={studyInfo.dateRequested}
           />
           <div className={styles.study_info__button_container}>
+            <Button label="Back" secondary />
             <Button label="Next" />
           </div>
         </div>
