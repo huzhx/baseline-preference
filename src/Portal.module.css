@@ -69,3 +69,60 @@
   margin: 0.5em 1.2em;
   text-transform: capitalize;
 }
+
+.portal__background {
+  visibility: hidden;
+}
+
+@media (min-width: 603px) {
+  .portal {
+    justify-content: center;
+  }
+  .portal__header {
+    background-color: var(--primary-color);
+    border-radius: 0;
+    padding: 5em 0 2em 0;
+    min-height: 25vh;
+  }
+  .portal__body {
+    background-color: transparent;
+    justify-content: flex-start;
+    flex-grow: 1;
+  }
+  .portal__content {
+    margin: 1.8em 1.5em;
+  }
+
+  .portal__background {
+    visibility: visible;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background-color: var(--primary-color);
+  }
+
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 50px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .shape-fill {
+    fill: var(--text-icon);
+  }
+
+  .secondary_color {
+    color: var(--text-icon);
+  }
+}
+
+@media (min-width: 1024px) {
+  svg {
+    height: 0;
+  }
+  .portal__body {
+    margin-top: 5em;
+  }
+}
