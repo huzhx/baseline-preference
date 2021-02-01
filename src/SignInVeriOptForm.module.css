@@ -1,0 +1,16 @@
+.sign_in_veri_opt_form {
+  margin: 0.8em 0 1.8em 0;
+  padding: 1.2em 2em;
+  background-color: var(--background-color-light);
+  border-radius: 2em;
+  box-shadow: var(--box-shadow);
+}
+
+.sign_in_veri_opt_form__question {
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  padding: 0.8em 0;
+}
