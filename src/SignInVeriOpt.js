@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 import styles from './SignInVeriOpt.module.css';
 import Header from './Header';
-import RadioWithOption from './RadioWithOption';
 import Footer from './Footer';
 import Button from './Button';
 import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import SignInVeriOptForm from './SignInVeriOptForm';
 
 const SignInVeriOpt = () => {
   const [sticky, setSticky] = useState(false);
@@ -34,13 +34,6 @@ const SignInVeriOpt = () => {
   useEffect(() => {
     console.log(veriOptState);
   }, [veriOptState]);
-
-  const radioGroup = [];
-  for (let option of options) {
-    radioGroup.push(
-      <RadioWithOption key={option} option={option} curCheckedValue={veriOptState} handleOnChange={handleOnChange} />
-    );
-  }
 
   return (
     <div className={styles.sign_in_veri_opt}>
@@ -84,10 +77,12 @@ const SignInVeriOpt = () => {
       </div>
       <div className={styles.sign_in_veri_opt__body}>
         <div className={styles.sign_in_veri_opt__content}>
-          <div className={styles.sign_in_veri_opt__form}>
-            <div className={styles.sign_in_veri_opt__question}>{question}</div>
-            {radioGroup}
-          </div>
+          <SignInVeriOptForm
+            question={question}
+            options={options}
+            veriOptState={veriOptState}
+            handleOnChange={handleOnChange}
+          />
           <div className={styles.sign_in_veri_opt__button_container}>
             <Button label="Next" />
           </div>
