@@ -68,7 +68,7 @@
   margin: 0.5em 1.2em;
 }
 
-.custom-shape-divider-bottom-1612077601 {
+.portal_picker__background {
   visibility: hidden;
 }
 
@@ -91,7 +91,7 @@
     margin: 1.8em 1.5em;
   }
 
-  .custom-shape-divider-bottom-1612077601 {
+  .portal_picker__background {
     visibility: visible;
     width: 100%;
     overflow: hidden;
