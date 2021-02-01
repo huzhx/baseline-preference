@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './Home.module.css';
 import HomeElement from './HomeElement';
@@ -57,9 +58,15 @@ const Home = () => {
       </div>
       <div className={styles.home__body}>
         <div className={styles.home__content}>
-          <HomeElement label="New Data Requests" unreadNum="2" />
-          <HomeElement label="Consent History" />
-          <HomeElement label="Default Data Sharing Preferences" />
+          <Link to="/data-requests">
+            <HomeElement label="New Data Requests" unreadNum="2" />
+          </Link>
+          <Link to="/consent-history">
+            <HomeElement label="Consent History" />
+          </Link>
+          <Link to="/baseline-preference">
+            <HomeElement label="Default Data Sharing Preferences" />
+          </Link>
         </div>
       </div>
       <div className={styles.home__footer}>

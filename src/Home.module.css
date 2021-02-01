@@ -23,6 +23,11 @@
   margin: 0.8em 1.5em 5.8em 1.5em;
 }
 
+.home__content a {
+  color: var(--primary-text-color);
+  text-decoration: none;
+}
+
 .home__footer {
   display: flex;
   flex-direction: row;
