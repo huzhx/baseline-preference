@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5em 1.8em;
+  padding: 1.2em 0.8em;
   background-color: var(--background-color-light);
   border-radius: 0 0 100% 100%;
   font-size: 1.8rem;
@@ -22,9 +22,81 @@
 
 .header__main {
   text-align: center;
-  margin: 1.2em 0;
+  margin: 0.5em 0 1.8em 0;
+  flex-grow: 1;
 }
 
 .header--highlighted {
   color: var(--primary-color);
+}
+
+.header__back_button_container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.header__back_button_container--show {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.header__back_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  padding: 0.25em;
+  border-radius: 50%;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header__back_button:hover {
+  color: var(--primary-color-dark);
+  background-color: var(--primary-color-light-extra);
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.no_select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
