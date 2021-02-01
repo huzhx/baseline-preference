@@ -30,7 +30,9 @@ const DataRequests = () => {
   ];
   const requests = [];
   for (let request of newRequests) {
-    requests.push(<Study key={request.title} institution={request.institution} title={request.title} />);
+    requests.push(
+      <Study key={request.title} institution={request.institution} title={request.title} link="/study-info" />
+    );
   }
   return (
     <div className={styles.data_requests}>
