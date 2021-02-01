@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './StudyInfo.module.css';
 import Study from './Study';
@@ -26,6 +27,11 @@ const StudyInfo = () => {
     researchers: 'Helen Smith',
     dateRequested: '10/28/2020',
   };
+
+  const history = useHistory();
+  const goBack = () => history.goBack();
+  const goForward = () => history.push('/data-sharing-setting');
+
   return (
     <div className={styles.study_info}>
       <div className={styles.study_info__nav_bar}>
@@ -76,14 +82,14 @@ const StudyInfo = () => {
             dateRequested={studyInfo.dateRequested}
           />
           <div className={styles.study_info__button_container}>
-            <Button label="Back" secondary />
-            <Button label="Next" />
+            <Button label="Back" secondary handleClick={goBack} />
+            <Button label="Next" handleClick={goForward} />
           </div>
         </div>
       </div>
       <div className={styles.study_info__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Next" />
+          <Button label="Next" handleClick={goForward} />
         </Footer>
       </div>
     </div>
