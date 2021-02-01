@@ -37,7 +37,7 @@
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 603px) {
   .home__footer {
     display: none;
   }

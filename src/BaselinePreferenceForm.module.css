@@ -44,7 +44,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 603px) {
   .baseline_preference_form__footer {
     display: none;
   }

@@ -42,7 +42,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 603px) {
   .consent_history__footer {
     display: none;
   }

@@ -46,7 +46,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 603px) {
   .study_data_sharing_review__footer {
     display: none;
   }

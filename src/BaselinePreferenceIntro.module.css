@@ -39,7 +39,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 603px) {
   .baseline_preference_intro__footer {
     display: none;
   }
