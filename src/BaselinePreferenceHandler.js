@@ -23,6 +23,7 @@ const BaselinePreferenceHandler = () => {
     nextPaths.set('genetic', `${url}/mental-health`);
     nextPaths.set('mental-health', `${url}/sexual-and-reproductive-health`);
     nextPaths.set('sexual-and-reproductive-health', `${url}/family-history`);
+    nextPaths.set('family-history', '/');
     return nextPaths.get(key);
   }, []);
 
