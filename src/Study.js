@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './Study.module.css';
 
-const Study = ({ institution, title, status, purpose, researchers, dateRequested, link = '/' }) => {
+const Study = ({ institution, title, status, purpose, researchers, dateRequested, clickable, link = '/' }) => {
   return (
-    <Link className={styles.link} to={link}>
+    <Link className={clickable ? styles.link : [styles.link, styles.not_clickable].join(' ')} to={link}>
       <div className={[styles.study, styles.ripple].join(' ')}>
         <p className={styles.study__content}>
           <span className={styles['study__content--highlighted']}>Institution:</span>

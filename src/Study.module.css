@@ -61,3 +61,8 @@
   color: var(--secondary-text-color);
   text-decoration: none;
 }
+
+.not_clickable {
+  pointer-events: none;
+  cursor: default;
+}
