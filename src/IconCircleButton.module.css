@@ -8,14 +8,16 @@
   border-radius: 50%;
   color: var(--primary-color-light-extra);
   background-color: var(--primary-color);
+  box-shadow: var(--button-box-shadow);
   border: 1px solid var(--primary-color);
   cursor: pointer;
   transition: 0.3s;
 }
 
 .icon_circle_button:hover {
-  background-color: var(--primary-color-dark-extra);
-  color: var(--text-icon);
+  background-color: var(--primary-color-dark);
+  color: var(--primary-color-light);
+  box-shadow: none;
 }
 
 .ripple {
