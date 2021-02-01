@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import styles from './StudyDataSharing.module.css';
@@ -36,10 +36,95 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
-  let path = '/';
+  const [demographicState, setDemographicState] = useState(false);
+  const [generalClinicalState, setGeneralClinicalState] = useState(false);
+  const [biospecimenState, setBiospecimenState] = useState(false);
+  const [geneticState, setGeneticState] = useState(false);
+  const [mentalHealthState, setMentalHealthState] = useState(false);
+  const [sexAndRepState, setSexAndRepState] = useState(false);
+  const [familyHistoryState, setFamilyHistoryState] = useState(false);
+
+  const handleDemographicChange = (event) => {
+    setDemographicState(event.target.checked);
+  };
+  const handleGeneralClinicalChange = (event) => {
+    setGeneralClinicalState(event.target.checked);
+  };
+  const handleBiospecimenChange = (event) => {
+    setBiospecimenState(event.target.checked);
+  };
+  const handleGeneticChange = (event) => {
+    setGeneticState(event.target.checked);
+  };
+  const handleMentalHealthChange = (event) => {
+    setMentalHealthState(event.target.checked);
+  };
+  const handleSexAndRepChange = (event) => {
+    setSexAndRepState(event.target.checked);
+  };
+  const handleFamilyHistoryChange = (event) => {
+    setFamilyHistoryState(event.target.checked);
+  };
+
+  const dataElementsStateMap = new Map();
+  const dataElementsHandleChangeMap = new Map();
+
+  dataElementsStateMap.set(dataElements[0], demographicState);
+  dataElementsStateMap.set(dataElements[1], generalClinicalState);
+  dataElementsStateMap.set(dataElements[2], biospecimenState);
+  dataElementsStateMap.set(dataElements[3], geneticState);
+  dataElementsStateMap.set(dataElements[4], mentalHealthState);
+  dataElementsStateMap.set(dataElements[5], sexAndRepState);
+  dataElementsStateMap.set(dataElements[6], familyHistoryState);
+
+  dataElementsHandleChangeMap.set(dataElements[0], handleDemographicChange);
+  dataElementsHandleChangeMap.set(dataElements[1], handleGeneralClinicalChange);
+  dataElementsHandleChangeMap.set(dataElements[2], handleBiospecimenChange);
+  dataElementsHandleChangeMap.set(dataElements[3], handleGeneticChange);
+  dataElementsHandleChangeMap.set(dataElements[4], handleMentalHealthChange);
+  dataElementsHandleChangeMap.set(dataElements[5], handleSexAndRepChange);
+  dataElementsHandleChangeMap.set(dataElements[6], handleFamilyHistoryChange);
+
+  useEffect(() => {
+    console.log({
+      demographicState,
+      generalClinicalState,
+      biospecimenState,
+      geneticState,
+      mentalHealthState,
+      sexAndRepState,
+      familyHistoryState,
+    });
+  }, [
+    demographicState,
+    generalClinicalState,
+    biospecimenState,
+    geneticState,
+    mentalHealthState,
+    sexAndRepState,
+    familyHistoryState,
+  ]);
+
+  function anyRequirementNotMet() {
+    for (let requiredElement of requiredElements) {
+      const selectedState = dataElementsStateMap.get(requiredElement);
+      if (selectedState === false) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   const history = useHistory();
   const goBack = () => history.goBack();
-  const goForward = () => history.push(path);
+
+  const handleOnConsent = () => {
+    let path = '/';
+    if (anyRequirementNotMet()) {
+      path = '/decline-survey';
+    }
+    history.push(path);
+  };
 
   return (
     <div className={styles.study_data_sharing}>
@@ -83,16 +168,21 @@ const StudyDataSharing = () => {
       </div>
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__content}>
-          <StudyDataSharingForm dataElements={dataElements} requiredElements={requiredElements} />
+          <StudyDataSharingForm
+            dataElements={dataElements}
+            requiredElements={requiredElements}
+            dataElementsStateMap={dataElementsStateMap}
+            dataElementsHandleChangeMap={dataElementsHandleChangeMap}
+          />
           <div className={styles.study_data_sharing__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
-            <Button label="Consent" handleClick={goForward} />
+            <Button label="Consent" handleClick={handleOnConsent} />
           </div>
         </div>
       </div>
       <div className={styles.study_data_sharing__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Consent" handleClick={goForward} />
+          <Button label="Consent" handleClick={handleOnConsent} />
         </Footer>
       </div>
     </div>
