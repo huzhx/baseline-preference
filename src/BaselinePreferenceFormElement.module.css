@@ -32,16 +32,16 @@
 
 .baseline_preference_form_element__buttons__label {
   display: inline-block;
-  min-width: 9em;
-  padding: 1em 3.25em;
+  min-width: 7.5em;
+  padding: 0.8em 2.5em;
   background-color: var(--background-color-light);
   border-radius: 2em;
-  box-shadow: var(--button-box-shadow-light);
+  box-shadow: var(--box-shadow);
   border: 0;
   color: var(--secondary-text-color);
   text-align: center;
-  font-size: 0.85rem;
-  font-weight: 750;
+  font-size: 0.95rem;
+  font-weight: 550;
   line-height: 1.6em;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -51,14 +51,16 @@
 }
 
 .baseline_preference_form_element__buttons label:hover {
-  background-color: var(--primary-color-light-extra);
-  box-shadow: var(--button-box-shadow-primay);
+  color: var(--primary-color-dark);
+  background-color: var(--background-color-primary);
+  box-shadow: none;
 }
 
 .baseline_preference_form_element__buttons__label--checked {
-  color: var(--primary-color);
-  background-color: var(--primary-color-light-extra);
-  box-shadow: var(--button-box-shadow-primay);
+  color: var(--primary-color-dark);
+  background-color: var(--background-color-primary);
+  box-shadow: var(--box-shadow);
+  font-weight: 650;
 }
 
 .ripple {
