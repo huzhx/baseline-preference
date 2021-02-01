@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './HomeElement.module.css';
 
-const HomeElement = ({ label, unreadNum = 0, link }) => {
+const HomeElement = ({ label, unreadNum = 0, link = '/' }) => {
   return (
     <Link className={styles.link} to={link}>
       <div className={[styles.home_element, styles.ripple].join(' ')}>
