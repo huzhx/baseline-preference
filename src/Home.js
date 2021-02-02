@@ -22,7 +22,7 @@ const Home = () => {
     <div className={styles.home}>
       <div className={styles.home__nav_bar}>
         <NavBar>
-          <IconButton label="iAgree" flat>
+          <IconButton label="iAgree" flat link="/" isActive>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ const Home = () => {
       </div>
       <div className={styles.home__footer}>
         <Footer alignContentEvenly={true} sticky={sticky}>
-          <IconButton label="Home" link="/">
+          <IconButton label="Home" link="/" isActive>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
