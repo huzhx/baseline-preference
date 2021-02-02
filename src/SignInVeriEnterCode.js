@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './SignInVeriEnterCode.module.css';
 import Header from './Header';
@@ -29,6 +30,10 @@ const SignInVeriEnterCode = () => {
   }, [passcodeState]);
 
   const label = 'Please enter the 7-digit one-time passcode you received:';
+
+  const history = useHistory();
+  const goBack = () => history.goBack();
+  const handleClick = () => history.push('/baseline-preference');
 
   return (
     <div className={styles.sign_in_veri_enter_code}>
@@ -65,7 +70,7 @@ const SignInVeriEnterCode = () => {
         </NavBar>
       </div>
       <div className={styles.sign_in_veri_enter_code__header}>
-        <Header title="Your matching" highlights="patient record" addon="has been found!" />
+        <Header title="Your matching" highlights="patient record" addon="has been found!" hasGoBack />
       </div>
       <div className={styles['sign_in_veri_enter_code__header--noBackground']}>
         <Header title="Your matching" highlights="patient record" addon="has been found!" noBackground />
@@ -74,13 +79,14 @@ const SignInVeriEnterCode = () => {
         <div className={styles.sign_in_veri_enter_code__content}>
           <SignInVeriEnterCodeForm label={label} handleOnChange={handleOnChange} />
           <div className={styles.sign_in_veri_enter_code__button_container}>
-            <Button label="Submit" />
+            <Button label="Back" secondary handleClick={goBack} />
+            <Button label="Submit" handleClick={handleClick} />
           </div>
         </div>
       </div>
       <div className={styles.sign_in_veri_enter_code__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Submit" />
+          <Button label="Submit" handleClick={handleClick} />
         </Footer>
       </div>
     </div>
