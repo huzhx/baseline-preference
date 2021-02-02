@@ -16,6 +16,7 @@ const BaselinePreferenceForm = ({ cb }) => {
   const { dataElement } = useParams();
   const nextPath = cb(dataElement);
   const history = useHistory();
+  const goBack = () => history.goBack();
   const handleClick = () => {
     history.push(nextPath);
   };
@@ -177,6 +178,7 @@ const BaselinePreferenceForm = ({ cb }) => {
           title="How comfortable are you with sharing your"
           highlights={dataElement.split('-').join(' ')}
           addon="information"
+          hasGoBack
         />
       </div>
       <div className={styles['baseline_preference_form__header--noBackground']}>
@@ -192,6 +194,7 @@ const BaselinePreferenceForm = ({ cb }) => {
           {baselinePreferenceFormElements}
 
           <div className={styles.baseline_preference_form__button_container}>
+            <Button label="Back" secondary handleClick={goBack} />
             <Button label={buttonLabel} handleClick={handleClick} />
           </div>
         </div>
