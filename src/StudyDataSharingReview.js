@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './StudyDataSharingReview.module.css';
 import StudyDataSharingForm from './StudyDataSharingForm';
@@ -116,6 +117,27 @@ const StudyDataSharingReview = () => {
     familyHistoryState,
   ]);
 
+  function anyRequirementNotMet() {
+    for (let requiredElement of requiredElements) {
+      const selectedState = dataElementsStateMap.get(requiredElement);
+      if (selectedState === false) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  const history = useHistory();
+  const goBack = () => history.goBack();
+
+  const handleOnSubmit = () => {
+    let path = '/';
+    if (anyRequirementNotMet()) {
+      path = '/decline-survey';
+    }
+    history.push(path);
+  };
+
   return (
     <div className={styles.study_data_sharing_review}>
       <div className={styles.study_data_sharing_review__nav_bar}>
@@ -151,7 +173,7 @@ const StudyDataSharingReview = () => {
         </NavBar>
       </div>
       <div className={styles.study_data_sharing_review__header}>
-        <Header title="Data Sharing" />
+        <Header title="Data Sharing" hasGoBack />
       </div>
       <div className={styles['study_data_sharing_review__header--noBackground']}>
         <Header title="Data Sharing" noBackground />
@@ -166,13 +188,14 @@ const StudyDataSharingReview = () => {
             dataElementsHandleChangeMap={dataElementsHandleChangeMap}
           />
           <div className={styles.study_data_sharing_review__button_container}>
-            <Button label="Submit" />
+            <Button label="Back" secondary handleClick={goBack} />
+            <Button label="Submit" handleClick={handleOnSubmit} />
           </div>
         </div>
       </div>
       <div className={styles.study_data_sharing_review__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Submit" />
+          <Button label="Submit" handleClick={handleOnSubmit} />
         </Footer>
       </div>
     </div>
