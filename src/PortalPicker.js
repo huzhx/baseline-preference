@@ -1,9 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './PortalPicker.module.css';
 import AuthButton from './AuthButton';
 
 const PortalPicker = () => {
+  const history = useHistory();
+  const goForward = (path) => history.push(path);
+
   return (
     <div className={styles.portal_picker}>
       <div className={styles.portal_picker__header}>
@@ -22,8 +26,8 @@ const PortalPicker = () => {
       <div className={styles.portal_picker__body}>
         <div className={styles.portal_picker__content}>
           <div className={styles.portal_picker__content__label}>Please choose your portal</div>
-          <AuthButton label="Patient Portal" />
-          <AuthButton stroke label="Provider Portal" />
+          <AuthButton label="Patient Portal" handleClick={() => goForward('/portal/patient')} />
+          <AuthButton stroke label="Provider Portal" handleClick={() => goForward('/portal/provider')} />
         </div>
       </div>
     </div>
