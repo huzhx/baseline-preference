@@ -24,7 +24,7 @@ function App() {
         <Route path="/data-requests">
           <DataRequests />
         </Route>
-        <Route path="/study-info">
+        <Route path="/study-info/:reqId">
           <StudyInfo />
         </Route>
         <Route path="/consent-history">
