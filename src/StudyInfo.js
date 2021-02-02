@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import styles from './StudyInfo.module.css';
 import Study from './Study';
@@ -20,17 +20,63 @@ const StudyInfo = () => {
     [sticky]
   );
 
-  const studyInfo = {
-    institution: 'University of California San Diego',
-    title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics',
-    purpose: 'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
-    researchers: 'Helen Smith',
-    dateRequested: '10/28/2020',
+  const studiesInfo = {
+    1: {
+      reqId: '1',
+      institution: 'University of California San Diego',
+      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 1',
+      purpose:
+        'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
+      researchers: 'Helen Smith',
+      dateRequested: '10/28/2020',
+      status: 'Consented',
+    },
+    2: {
+      reqId: '2',
+      institution: 'University of California Irvine',
+      title: 'Understanding healthcare providers’technology use in asthma care 1',
+      purpose:
+        'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
+      researchers: 'Helen Smith',
+      dateRequested: '11/02/2020',
+      status: 'Declined',
+    },
+    3: {
+      reqId: '3',
+      institution: 'University of California San Diego',
+      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 2',
+      purpose:
+        'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
+      researchers: 'Helen Smith',
+      dateRequested: '02/02/2021',
+    },
+    4: {
+      reqId: '4',
+      institution: 'University of California Irvine',
+      title: 'Understanding healthcare providers’technology use in asthma care 2',
+      purpose:
+        'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
+      researchers: 'Helen Smith',
+      dateRequested: '01/19/2021',
+    },
   };
+
+  const { reqId } = useParams();
+
+  const studyInfo = studiesInfo[reqId];
+
+  console.log(studyInfo);
+
+  let path;
+  if (typeof studyInfo['status'] !== 'undefined') {
+    path = '/data-sharing-review';
+  } else {
+    path = '/data-sharing-setting';
+  }
 
   const history = useHistory();
   const goBack = () => history.goBack();
-  const goForward = () => history.push('/data-sharing-setting');
+  const goForward = () => history.push(path);
 
   return (
     <div className={styles.study_info}>
