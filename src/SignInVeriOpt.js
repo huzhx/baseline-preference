@@ -19,7 +19,7 @@ const SignInVeriOpt = () => {
     [sticky]
   );
 
-  const question = 'Please select your preferred way to  receive a one time passcode to verify your identity:';
+  const question = 'Please select your preferred way to receive a one time passcode to verify your identity:';
   const options = [
     'a. Send a text message to xxx-xxx-xxxx',
     'b. Call xxx-xxx-xxxx',
