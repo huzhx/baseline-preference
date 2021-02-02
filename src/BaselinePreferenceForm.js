@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
 
 import styles from './BaselinePreferenceForm.module.css';
 import BaselinePreferenceFormElement from './BaselinePreferenceFormElement';
@@ -11,6 +11,8 @@ import NavBar from './NavBar';
 import IconButton from './IconButton';
 
 const BaselinePreferenceForm = ({ cb }) => {
+  const { pathname } = useLocation();
+
   const { dataElement } = useParams();
   const nextPath = cb(dataElement);
   const history = useHistory();
@@ -56,6 +58,17 @@ const BaselinePreferenceForm = ({ cb }) => {
     },
     [sticky]
   );
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setDoctorOfficeState('');
+    setHospitalState('');
+    setInsuranceState('');
+    setStateLocalHAState('');
+    setGovernmentHAState('');
+    setBiotechnologyState('');
+    setUniversityState('');
+  }, [pathname]);
 
   useEffect(() => {
     console.log({
