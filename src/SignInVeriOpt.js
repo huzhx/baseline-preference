@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './SignInVeriOpt.module.css';
 import Header from './Header';
@@ -35,6 +36,10 @@ const SignInVeriOpt = () => {
     console.log(veriOptState);
   }, [veriOptState]);
 
+  const history = useHistory();
+  const goBack = () => history.goBack();
+  const handleClick = () => history.push('/sign-in/enter-code');
+
   return (
     <div className={styles.sign_in_veri_opt}>
       <div className={styles.sign_in_veri_opt__nav_bar}>
@@ -70,7 +75,7 @@ const SignInVeriOpt = () => {
         </NavBar>
       </div>
       <div className={styles.sign_in_veri_opt__header}>
-        <Header title="Your matching" highlights="patient record" addon="has been found!" />
+        <Header title="Your matching" highlights="patient record" addon="has been found!" hasGoBack />
       </div>
       <div className={styles['sign_in_veri_opt__header--noBackground']}>
         <Header title="Your matching" highlights="patient record" addon="has been found!" noBackground />
@@ -84,13 +89,14 @@ const SignInVeriOpt = () => {
             handleOnChange={handleOnChange}
           />
           <div className={styles.sign_in_veri_opt__button_container}>
-            <Button label="Next" />
+            <Button label="Back" secondary handleClick={goBack} />
+            <Button label="Next" handleClick={handleClick} />
           </div>
         </div>
       </div>
       <div className={styles.sign_in_veri_opt__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Next" />
+          <Button label="Next" handleClick={handleClick} />
         </Footer>
       </div>
     </div>
