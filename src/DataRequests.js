@@ -20,18 +20,26 @@ const DataRequests = () => {
 
   const newRequests = [
     {
+      reqId: '3',
       institution: 'University of California San Diego',
-      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics',
+      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 2',
     },
     {
+      reqId: '4',
       institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care',
+      title: 'Understanding healthcare providers’technology use in asthma care 2',
     },
   ];
   const requests = [];
   for (let request of newRequests) {
     requests.push(
-      <Study key={request.title} institution={request.institution} title={request.title} clickable link="/study-info" />
+      <Study
+        key={request.title}
+        institution={request.institution}
+        title={request.title}
+        clickable
+        link={`/study-info/${request.reqId}`}
+      />
     );
   }
   return (

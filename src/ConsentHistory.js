@@ -20,33 +20,15 @@ const ConsentHistory = () => {
 
   const consentHistory = [
     {
+      reqId: '1',
       institution: 'University of California San Diego',
       title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 1',
       status: 'Consented',
     },
     {
+      reqId: '2',
       institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care 2',
-      status: 'Declined',
-    },
-    {
-      institution: 'University of California San Diego',
-      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 3',
-      status: 'Consented',
-    },
-    {
-      institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care 4',
-      status: 'Declined',
-    },
-    {
-      institution: 'University of California San Diego',
-      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 5',
-      status: 'Consented',
-    },
-    {
-      institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care 6',
+      title: 'Understanding healthcare providers’technology use in asthma care 1',
       status: 'Declined',
     },
   ];
@@ -58,6 +40,8 @@ const ConsentHistory = () => {
         institution={consentItem.institution}
         title={consentItem.title}
         status={consentItem.status}
+        clickable
+        link={`/study-info/${consentItem.reqId}`}
       />
     );
   }
