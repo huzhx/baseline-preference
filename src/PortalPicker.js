@@ -11,6 +11,22 @@ const PortalPicker = () => {
   return (
     <div className={styles.portal_picker}>
       <div className={styles.portal_picker__header}>
+        <div className={styles.portal_picker__header__back_button_container}>
+          <div className={[styles.portal_picker__header__back_button, styles.ripple].join(' ')}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </div>
+        </div>
         <div className={[styles.portal_picker__header__secondary, styles.secondary_color].join(' ')}>Welcome to</div>
         <div className={styles.portal_picker__header__main}>iAGREE</div>
       </div>
