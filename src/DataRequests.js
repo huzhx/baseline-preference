@@ -37,7 +37,6 @@ const DataRequests = () => {
         key={request.title}
         institution={request.institution}
         title={request.title}
-        clickable
         link={`/study-info/${request.reqId}`}
       />
     );
