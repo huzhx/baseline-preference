@@ -21,10 +21,6 @@
   justify-self: flex-start;
 }
 
-.data_sharing_element__data_element--required {
-  color: var(--primary-color);
-}
-
 .data_sharing_element__checker {
   justify-self: flex-start;
 }
