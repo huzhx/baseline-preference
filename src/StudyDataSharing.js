@@ -36,13 +36,13 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
-  const [demographicState, setDemographicState] = useState(false);
+  const [demographicState, setDemographicState] = useState(true);
   const [generalClinicalState, setGeneralClinicalState] = useState(false);
-  const [biospecimenState, setBiospecimenState] = useState(false);
+  const [biospecimenState, setBiospecimenState] = useState(true);
   const [geneticState, setGeneticState] = useState(false);
   const [mentalHealthState, setMentalHealthState] = useState(false);
-  const [sexAndRepState, setSexAndRepState] = useState(false);
-  const [familyHistoryState, setFamilyHistoryState] = useState(false);
+  const [sexAndRepState, setSexAndRepState] = useState(true);
+  const [familyHistoryState, setFamilyHistoryState] = useState(true);
 
   const handleDemographicChange = (event) => {
     setDemographicState(event.target.checked);
@@ -169,7 +169,6 @@ const StudyDataSharing = () => {
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__content}>
           <StudyDataSharingForm
-            dataElements={dataElements}
             requiredElements={requiredElements}
             dataElementsStateMap={dataElementsStateMap}
             dataElementsHandleChangeMap={dataElementsHandleChangeMap}
