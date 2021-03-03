@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './DataRequests.module.css';
 import Study from './Study';
@@ -7,6 +8,7 @@ import Footer from './Footer';
 import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import StudyRequest from './StudyRequest';
 
 const DataRequests = () => {
   const [sticky, setSticky] = useState(false);
@@ -17,6 +19,8 @@ const DataRequests = () => {
     },
     [sticky]
   );
+
+  const history = useHistory();
 
   const newRequests = [
     {
@@ -32,12 +36,18 @@ const DataRequests = () => {
   ];
   const requests = [];
   for (let request of newRequests) {
+    const studyInfo = {
+      title: request.title,
+      institution: request.institution,
+    };
     requests.push(
-      <Study
+      <StudyRequest
         key={request.title}
-        institution={request.institution}
-        title={request.title}
-        link={`/study-info/${request.reqId}`}
+        studyInfo={studyInfo}
+        buttonLabel="Answer Request"
+        buttonHandler={() => {
+          history.push(`/study-info/${request.reqId}`);
+        }}
       />
     );
   }
