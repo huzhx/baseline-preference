@@ -36,9 +36,7 @@ function App() {
         <Route path="/data-sharing-review">
           <StudyDataSharingReview />
         </Route>
-        <Route path="/decline-survey">
-          <StudyDeclineSurvey />
-        </Route>
+        <Route path="/decline-survey" component={StudyDeclineSurvey} />
         <Route path="/portal-pick">
           <PortalPicker />
         </Route>
