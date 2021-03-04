@@ -115,15 +115,29 @@ const StudyDataSharing = () => {
     return false;
   }
 
+  function getDeclinedElements() {
+    const declinedElements = [];
+    for (let requiredElement of requiredElements) {
+      const selectedState = dataElementsStateMap.get(requiredElement);
+      if (selectedState === false) {
+        declinedElements.push(requiredElement);
+      }
+    }
+    return declinedElements;
+  }
+
   const history = useHistory();
   const goBack = () => history.goBack();
 
   const handleOnSubmit = () => {
+    const state = {};
     let path = '/';
     if (anyRequirementNotMet()) {
       path = '/decline-survey';
+      state['declinedElements'] = getDeclinedElements();
+      state['requiredElementsNumber'] = requiredElements.size;
     }
-    history.push(path);
+    history.push(path, state);
   };
 
   return (
