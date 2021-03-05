@@ -7,7 +7,12 @@ import Button from './Button';
 const StudyRequest = ({ studyInfo, buttonLabel, buttonHandler }) => {
   return (
     <div className={styles.study_request}>
-      <Study key={studyInfo.title} institution={studyInfo.institution} title={studyInfo.title} />
+      <Study
+        key={studyInfo.title}
+        institution={studyInfo.institution}
+        title={studyInfo.title}
+        status={studyInfo.status}
+      />
       <div className={styles.study_request__button_container}>
         <Button label={buttonLabel} handleClick={buttonHandler} />
       </div>
