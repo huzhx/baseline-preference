@@ -189,13 +189,13 @@ const StudyDataSharing = () => {
           />
           <div className={styles.study_data_sharing__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
-            <Button label="Consent" handleClick={handleOnSubmit} />
+            <Button label="Next" handleClick={handleOnSubmit} />
           </div>
         </div>
       </div>
       <div className={styles.study_data_sharing__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Consent" handleClick={handleOnSubmit} />
+          <Button label="Next" handleClick={handleOnSubmit} />
         </Footer>
       </div>
     </div>
