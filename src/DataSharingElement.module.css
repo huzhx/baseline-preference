@@ -32,10 +32,10 @@
 
 .data_sharing_element__label {
   justify-self: flex-start;
-  color: var(--primary-color);
+  color: var(--primary-color-dark);
   border-radius: 0.3em;
-  border: 0.125em solid var(--primary-color);
-  font-weight: 480;
-  padding: 0.1em 0.25em;
-  background-color: var(--primary-color-light-extra);
+  border: 0.125em solid var(--primary-color-light);
+  font-weight: 600;
+  padding: 0.1em 0.5em;
+  background-color: var(--primary-color-light);
 }
