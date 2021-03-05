@@ -29,7 +29,7 @@ const StudyInfo = () => {
         'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
       researchers: 'Helen Smith',
       dateRequested: '10/28/2020',
-      status: 'Consented',
+      status: 'Data Not Used',
     },
     2: {
       reqId: '2',
@@ -39,7 +39,7 @@ const StudyInfo = () => {
         'Are there differences in clinic visits for people with diabetes by gender identity, race, and ethnicity?',
       researchers: 'Helen Smith',
       dateRequested: '11/02/2020',
-      status: 'Declined',
+      status: 'Data Used',
     },
     3: {
       reqId: '3',
