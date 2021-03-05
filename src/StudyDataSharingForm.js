@@ -18,6 +18,7 @@ const StudyDataSharingForm = ({
         checked={dataElementsStateMap && dataElementsStateMap.get(element)}
         used={usedElements && usedElements.has(element)}
         onChange={dataElementsHandleChangeMap && dataElementsHandleChangeMap.get(element)}
+        viewOnly={usedElements && usedElements.size > 0}
       />
     );
   }
