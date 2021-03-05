@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import styles from './DataRequests.module.css';
-import Study from './Study';
 import Header from './Header';
 import Footer from './Footer';
 import { useScrollPosition } from './UseScrollPosition';
