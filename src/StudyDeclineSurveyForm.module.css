@@ -18,7 +18,7 @@
 .study_decline_survey_form__comment {
   opacity: 1;
   transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-  margin-bottom: 0.8em;
+  margin: 0.8em 0;
 }
 
 .study_decline_survey_form__comment--hidden {
