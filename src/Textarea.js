@@ -6,8 +6,6 @@ const Textarea = ({ label, placeholder, onChange, value, rows }) => {
   const textarea = useRef(null);
 
   useEffect(() => {
-    textarea.current.focus();
-    console.log(textarea.current.scrollHeight);
     if (value.trim() === '') {
       textarea.current.rows = 2;
     } else {
