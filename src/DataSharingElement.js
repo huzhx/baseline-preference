@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './DataSharingElement.module.css';
 import Checkbox from './Checkbox';
 
-const DataSharingElement = ({ dataElement, used, checked, onChange }) => {
+const DataSharingElement = ({ dataElement, used, checked, onChange, viewOnly }) => {
   return (
     <div
       className={
@@ -14,9 +14,10 @@ const DataSharingElement = ({ dataElement, used, checked, onChange }) => {
     >
       <div className={styles.data_sharing_element__data_element}>{dataElement}</div>
       <div className={styles.data_sharing_element__checker}>
-        <Checkbox checked={checked} onChange={onChange} />
+        {!viewOnly && <Checkbox checked={checked} onChange={onChange} />}
+        {viewOnly && <div className={styles.data_sharing_element__label}>{checked ? 'Yes' : 'No'}</div>}
       </div>
-      {used && <div className={styles.data_sharing_element__label}>{used ? 'True' : 'False'}</div>}
+      {used && <div className={styles.data_sharing_element__label}>{used ? 'Yes' : 'No'}</div>}
     </div>
   );
 };
