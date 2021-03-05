@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styles from './ConsentHistory.module.css';
-import Study from './Study';
 import Header from './Header';
 import Footer from './Footer';
 import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import StudyRequest from './StudyRequest';
 
 const ConsentHistory = () => {
   const [sticky, setSticky] = useState(false);
@@ -18,30 +19,45 @@ const ConsentHistory = () => {
     [sticky]
   );
 
+  const history = useHistory();
+
   const consentHistory = [
     {
       reqId: '1',
       institution: 'University of California San Diego',
       title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 1',
-      status: 'Consented',
+      status: 'Data Not Used',
     },
     {
       reqId: '2',
       institution: 'University of California Irvine',
       title: 'Understanding healthcare providers’technology use in asthma care 1',
-      status: 'Declined',
+      status: 'Data Used',
     },
   ];
+
+  const buttonLabelMap = {
+    'Data Not Used': 'Modify Consent',
+    'Data Used': 'View Data Used',
+  };
+
   const studies = [];
   for (let consentItem of consentHistory) {
+    const studyInfo = {
+      title: consentItem.title,
+      institution: consentItem.institution,
+      status: consentItem.status,
+    };
+    const consentStatus = consentItem.status;
+    const buttonLabel = buttonLabelMap[consentStatus];
     studies.push(
-      <Study
+      <StudyRequest
         key={consentItem.title}
-        institution={consentItem.institution}
-        title={consentItem.title}
-        status={consentItem.status}
-        clickable
-        link={`/study-info/${consentItem.reqId}`}
+        studyInfo={studyInfo}
+        buttonLabel={buttonLabel}
+        buttonHandler={() => {
+          history.push(`/study-info/${consentItem.reqId}`);
+        }}
       />
     );
   }
