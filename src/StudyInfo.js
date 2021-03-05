@@ -68,7 +68,7 @@ const StudyInfo = () => {
   console.log(studyInfo);
 
   let path;
-  if (typeof studyInfo['status'] !== 'undefined') {
+  if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Used') {
     path = '/data-sharing-review';
   } else {
     path = '/data-sharing-setting';
