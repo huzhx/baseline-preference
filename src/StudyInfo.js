@@ -144,10 +144,14 @@ const StudyInfo = () => {
         <div className={styles.study_info__content}>
           <Study
             institution={studyInfo.institution}
+            sponsor={studyInfo.sponsor}
             title={studyInfo.title}
             purpose={studyInfo.purpose}
-            researchers={studyInfo.researchers}
-            dateRequested={studyInfo.dateRequested}
+            principleInvestigator={studyInfo.principleInvestigator}
+            irbContent={studyInfo.irbContent}
+            irbApprovalDate={studyInfo.irbApprovalDate}
+            irbApprovedBy={studyInfo.irbApprovedBy}
+            additionalInfoURL={studyInfo.additionalInfoURL}
           />
           <div className={styles.study_info__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
