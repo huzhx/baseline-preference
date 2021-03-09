@@ -1,46 +1,70 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import styles from './Study.module.css';
 
-const Study = ({ institution, title, status, purpose, researchers, dateRequested, clickable, link = '/' }) => {
+const Study = ({
+  institution,
+  sponsor,
+  title,
+  purpose,
+  principleInvestigator,
+  irbContent,
+  irbApprovalDate,
+  irbApprovedBy,
+  additionalInfoURL,
+  status,
+}) => {
   return (
-    <Link className={clickable ? styles.link : [styles.link, styles.not_clickable].join(' ')} to={link}>
-      <div className={[styles.study, styles.ripple].join(' ')}>
+    <div className={styles.study}>
+      <p className={styles.study__content}>
+        <span className={styles['study__content--highlighted']}>Institution:</span>
+        <span>{institution}</span>
+      </p>
+      {sponsor && (
         <p className={styles.study__content}>
-          <span className={styles['study__content--highlighted']}>Institution:</span>
-          <span>{institution}</span>
+          <span className={styles['study__content--highlighted']}>Sponsor:</span>
+          <span>{sponsor}</span>
         </p>
+      )}
+      <p className={styles.study__content}>
+        <span className={styles['study__content--highlighted']}>Study Title:</span>
+        <span>{title}</span>
+      </p>
+      {status && (
         <p className={styles.study__content}>
-          <span className={styles['study__content--highlighted']}>Study Title:</span>
-          <span>{title}</span>
+          <span className={styles['study__content--highlighted']}>Status:</span>
+          <span>{status}</span>
         </p>
-        {status && (
-          <p className={styles.study__content}>
-            <span className={styles['study__content--highlighted']}>Status:</span>
-            <span>{status}</span>
-          </p>
-        )}
-        {purpose && (
-          <p className={styles.study__content}>
-            <span className={styles['study__content--highlighted']}>Purpose:</span>
-            <span>{purpose}</span>
-          </p>
-        )}
-        {researchers && (
-          <p className={styles.study__content}>
-            <span className={styles['study__content--highlighted']}>Researchers:</span>
-            <span>{researchers}</span>
-          </p>
-        )}
-        {dateRequested && (
-          <p className={styles.study__content}>
-            <span className={styles['study__content--highlighted']}>Date Requested:</span>
-            <span>{dateRequested}</span>
-          </p>
-        )}
-      </div>
-    </Link>
+      )}
+      {purpose && (
+        <p className={styles.study__content}>
+          <span className={styles['study__content--highlighted']}>Purpose:</span>
+          <span>{purpose}</span>
+        </p>
+      )}
+      {principleInvestigator && (
+        <p className={styles.study__content}>
+          <span className={styles['study__content--highlighted']}>Principle Investigator:</span>
+          <span>{principleInvestigator}</span>
+        </p>
+      )}
+      {irbContent && (
+        <p className={styles.study__content}>
+          <span className={styles['study__content--highlighted']}>Institutional Review Board:</span>
+          <span>
+            {irbContent} This IRB was approved on {irbApprovalDate}. This IRB was approved by {irbApprovedBy}.
+          </span>
+        </p>
+      )}
+      {additionalInfoURL && (
+        <p className={styles.study__content}>
+          <span className={styles['study__content--highlighted']}>Additional Information:</span>
+          <a className={styles.left} href={additionalInfoURL} target="_blank" rel="noreferrer">
+            {additionalInfoURL}
+          </a>
+        </p>
+      )}
+    </div>
   );
 };
 
