@@ -22,7 +22,7 @@
   color: var(--primary-color);
 }
 
-a {
+.study a {
   pointer-events: visible;
   cursor: pointer;
   text-decoration: none;
