@@ -24,13 +24,14 @@ const DataRequests = () => {
   const newRequests = [
     {
       reqId: '3',
-      institution: 'University of California San Diego',
-      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 2',
+      institution: 'Observational Health Data Sciences and Informatics (OHDSI)',
+      title:
+        'Development and validation of a prognostic model predicting symptomatic hemorrhagic transformation in acute ischemic stroke',
     },
     {
       reqId: '4',
-      institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care 2',
+      institution: 'Medical Convergence Research Center, Wonkwang University',
+      title: 'Analysis and classification of urinary stones',
     },
   ];
   const requests = [];

@@ -24,14 +24,14 @@ const ConsentHistory = () => {
   const consentHistory = [
     {
       reqId: '1',
-      institution: 'University of California San Diego',
-      title: 'Clinic visits for patients with uncontrolled diabetes by demographic characteristics 1',
+      institution: 'Stanford University',
+      title: 'Clinical-trial of COVID-19 Convalescent Plasma in Outpatients',
       status: 'Data Not Used',
     },
     {
       reqId: '2',
-      institution: 'University of California Irvine',
-      title: 'Understanding healthcare providers’technology use in asthma care 1',
+      institution: 'Peking University First Hospital',
+      title: 'COVID-19 Surveillance Based on Smart Wearable Device',
       status: 'Data Used',
     },
   ];
