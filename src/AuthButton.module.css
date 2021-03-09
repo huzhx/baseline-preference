@@ -24,7 +24,7 @@
 }
 
 .auth_button:hover {
-  background-color: var(--primary-color-dark-extra);
+  background-color: var(--primary-color-dark);
   color: var(--text-icon);
 }
 
