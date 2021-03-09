@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import styles from './StudyDeclineSurvey.module.css';
 import Header from './Header';
@@ -10,7 +10,23 @@ import IconButton from './IconButton';
 import NavBar from './NavBar';
 import StudyDeclineSurveyFrom from './StudyDeclineSurveyForm';
 
-const StudyDeclineSurvey = () => {
+const StudyDeclineSurvey = ({
+  location: {
+    state: { declinedElements, requiredElementsNumber, declineSurveyPathMap },
+  },
+}) => {
+  const { declinedElement } = useParams();
+
+  const [declineState, setDeclineState] = useState('');
+  const handleDeclineChange = (event) => {
+    setDeclineState(event.target.value);
+  };
+
+  const [commentState, setCommentState] = useState('');
+  const handleCommentChange = (event) => {
+    setCommentState(event.target.value);
+  };
+
   const [sticky, setSticky] = useState(false);
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -20,39 +36,31 @@ const StudyDeclineSurvey = () => {
     [sticky]
   );
 
-  const question =
-    'We noticed you are not willing to share some data or any data with us for this study, could you please tell us why?';
-  const options = [
-    ' a. I am concerned about the security of the information I provided',
-    'b.  I am not interested in this topic',
-    'c.  Other',
-  ];
-
-  const [declineState, setDeclineState] = useState('');
-  const handleDeclineChange = (event) => {
-    setDeclineState(event.target.value);
-  };
-
-  const [ifOtherSelectedState, setIfOtherSelectedState] = useState(false);
-
-  const [commentState, setCommentState] = useState('');
-  const handleCommentChange = (event) => {
-    setCommentState(event.target.value);
-  };
-
   useEffect(() => {
-    console.log({ declineState });
-    console.log({ commentState });
-    if (declineState === options[2]) {
-      setIfOtherSelectedState(true);
-    } else {
-      setIfOtherSelectedState(false);
-      setCommentState('');
-    }
-  }, [declineState, options, commentState]);
+    setDeclineState('');
+    setCommentState('');
+  }, [declinedElement]);
 
   const history = useHistory();
   const goBack = () => history.goBack();
+
+  const submitButtonHandler = () => {
+    const nextPath = declineSurveyPathMap[declinedElement].nextPath;
+    const state = {
+      declinedElements: declinedElements,
+      requiredElementsNumber: requiredElementsNumber,
+      declineSurveyPathMap: declineSurveyPathMap,
+    };
+
+    history.push(nextPath, state);
+  };
+
+  let surveyTitle = '';
+  if (declinedElements.length === requiredElementsNumber) {
+    surveyTitle = 'Sorry to see you go';
+  } else {
+    surveyTitle = 'Can you elaborate?';
+  }
 
   return (
     <div className={styles.study_survey}>
@@ -89,31 +97,29 @@ const StudyDeclineSurvey = () => {
         </NavBar>
       </div>
       <div className={styles.study_survey__header}>
-        <Header title="Sorry to see you go" hasGoBack />
+        <Header title={surveyTitle} hasGoBack />
       </div>
       <div className={styles['study_survey__header--noBackground']}>
-        <Header title="Sorry to see you go" noBackground />
+        <Header title={surveyTitle} noBackground />
       </div>
       <div className={styles.study_survey__body}>
         <div className={styles.study_survey__content}>
           <StudyDeclineSurveyFrom
-            question={question}
-            options={options}
             declineState={declineState}
             handleDeclineChange={handleDeclineChange}
-            ifOtherSelectedState={ifOtherSelectedState}
-            handleCommentChange={handleCommentChange}
             commentState={commentState}
+            handleCommentChange={handleCommentChange}
+            declinedElement={declinedElement}
           />
           <div className={styles.study_survey__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
-            <Button label="Submit" />
+            <Button label="Next" handleClick={submitButtonHandler} />
           </div>
         </div>
       </div>
       <div className={styles.study_survey__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Submit" />
+          <Button label="Next" handleClick={submitButtonHandler} />
         </Footer>
       </div>
     </div>
