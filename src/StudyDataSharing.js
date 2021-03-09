@@ -126,6 +126,20 @@ const StudyDataSharing = () => {
     return declinedElements;
   }
 
+  function getDeclineSurveyPaths(declinedElements) {
+    const pathMap = {};
+    for (let i = 0; i < declinedElements.length; i++) {
+      const declinedElement = declinedElements[i];
+      pathMap[declinedElement] = {};
+      if (i === declinedElements.length - 1) {
+        pathMap[declinedElement]['nextPath'] = '/';
+      } else {
+        pathMap[declinedElement]['nextPath'] = `/decline-survey/${declinedElements[i + 1]}`;
+      }
+    }
+    return pathMap;
+  }
+
   const history = useHistory();
   const goBack = () => history.goBack();
 
@@ -133,9 +147,10 @@ const StudyDataSharing = () => {
     const state = {};
     let path = '/';
     if (anyRequirementNotMet()) {
-      path = '/decline-survey';
       state['declinedElements'] = getDeclinedElements();
       state['requiredElementsNumber'] = requiredElements.size;
+      state['declineSurveyPathMap'] = getDeclineSurveyPaths(state['declinedElements']);
+      path = `/decline-survey/${state['declinedElements'][0]}`;
     }
     history.push(path, state);
   };
