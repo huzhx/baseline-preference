@@ -12,6 +12,7 @@
   --background-color-dark: rgba(240, 240, 240, 0.7);
   --background-color-primary: rgba(47, 188, 161, 0.1);
   --background-border-color: #707070;
+  --background-border-color-light: #d4d3d3;
   --box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
   --button-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.3);
   --button-box-shadow-light: 0 0 0.3em rgba(0, 0, 0, 0.5);
