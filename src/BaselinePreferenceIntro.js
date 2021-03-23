@@ -20,9 +20,7 @@ const BaselinePreferenceIntro = ({ cb }) => {
     [sticky]
   );
 
-  const greeting = 'Hi! Welcome to iAGREE!';
-  const introduction =
-    'Since you are a first time user, before we get it started, please set up your data sharing preferences. You can always edit your preferences in the future if needed!';
+  const introduction = 'Welcome to iAGREE! You are a first time user. Please set up your data sharing preferences.';
   const buttonLabel = 'next';
 
   const nextPath = cb('intro');
@@ -70,7 +68,6 @@ const BaselinePreferenceIntro = ({ cb }) => {
       </div>
       <div className={styles.baseline_preference_intro__body}>
         <div className={styles.baseline_preference_intro__content}>
-          <Text value={greeting} />
           <Text value={introduction} />
           <div className={styles.baseline_preference_intro__button_container}>
             <Button label={buttonLabel} handleClick={handleClick} />
