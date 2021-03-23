@@ -9,6 +9,7 @@ import { useScrollPosition } from './UseScrollPosition';
 import Footer from './Footer';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import Modal from 'react-modal';
 
 const StudyDataSharing = () => {
   const [sticky, setSticky] = useState(false);
@@ -36,22 +37,24 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
-  const baselinePreference = {};
-  baselinePreference['demographic'] = true;
-  baselinePreference['generalClinical'] = false;
-  baselinePreference['biospecimen'] = true;
-  baselinePreference['genetic'] = false;
-  baselinePreference['mentalHealth'] = false;
-  baselinePreference['sexAndRep'] = true;
-  baselinePreference['familyHistory'] = true;
+  const baselinePreference = new Map();
+  baselinePreference.set('demographic', true);
+  baselinePreference.set('general clinical', false);
+  baselinePreference.set('biospecimen', true);
+  baselinePreference.set('genetic', false);
+  baselinePreference.set('mental health', false);
+  baselinePreference.set('sexual and reproductive health', true);
+  baselinePreference.set('family history', true);
 
-  const [demographicState, setDemographicState] = useState(baselinePreference['demographic']);
-  const [generalClinicalState, setGeneralClinicalState] = useState(baselinePreference['generalClinical']);
-  const [biospecimenState, setBiospecimenState] = useState(baselinePreference['biospecimen']);
-  const [geneticState, setGeneticState] = useState(baselinePreference['genetic']);
-  const [mentalHealthState, setMentalHealthState] = useState(baselinePreference['mentalHealth']);
-  const [sexAndRepState, setSexAndRepState] = useState(baselinePreference['sexAndRep']);
-  const [familyHistoryState, setFamilyHistoryState] = useState(baselinePreference['familyHistory']);
+  const [baselinePreferenceState, setBaselinePreferenceState] = useState(baselinePreference);
+
+  const [demographicState, setDemographicState] = useState(baselinePreferenceState.get('demographic'));
+  const [generalClinicalState, setGeneralClinicalState] = useState(baselinePreferenceState.get('general clinical'));
+  const [biospecimenState, setBiospecimenState] = useState(baselinePreferenceState.get('biospecimen'));
+  const [geneticState, setGeneticState] = useState(baselinePreferenceState.get('genetic'));
+  const [mentalHealthState, setMentalHealthState] = useState(baselinePreferenceState.get('mental health'));
+  const [sexAndRepState, setSexAndRepState] = useState(baselinePreferenceState.get('sexual and reproductive health'));
+  const [familyHistoryState, setFamilyHistoryState] = useState(baselinePreferenceState.get('family history'));
 
   const handleDemographicChange = (event) => {
     setDemographicState(event.target.checked);
@@ -94,25 +97,87 @@ const StudyDataSharing = () => {
   dataElementsHandleChangeMap.set(dataElements[5], handleSexAndRepChange);
   dataElementsHandleChangeMap.set(dataElements[6], handleFamilyHistoryChange);
 
+  const [modalOpenState, setModalOpenState] = useState(false);
+  const [modalDataElementState, setModalDataElementState] = useState(null);
+
+  const customModalStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const closeModal = () => {
+    setModalOpenState(false);
+  };
+
+  const updateBaseline = (dataElement) => {
+    const dataElementState = dataElementsStateMap.get(dataElement);
+    baselinePreferenceState.set(dataElement, dataElementState);
+    setBaselinePreferenceState(baselinePreferenceState);
+    setModalOpenState(false);
+    console.log({ baselinePreferenceState });
+  };
+
   useEffect(() => {
-    console.log({
-      demographicState,
-      generalClinicalState,
-      biospecimenState,
-      geneticState,
-      mentalHealthState,
-      sexAndRepState,
-      familyHistoryState,
-    });
-  }, [
-    demographicState,
-    generalClinicalState,
-    biospecimenState,
-    geneticState,
-    mentalHealthState,
-    sexAndRepState,
-    familyHistoryState,
-  ]);
+    console.log({ baselinePreferenceState });
+    if (demographicState !== baselinePreferenceState.get('demographic')) {
+      setModalOpenState(true);
+      setModalDataElementState('demographic');
+    }
+  }, [demographicState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (generalClinicalState !== baselinePreferenceState.get('general clinical')) {
+      setModalOpenState(true);
+      setModalDataElementState('general clinical');
+    }
+  }, [generalClinicalState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (biospecimenState !== baselinePreferenceState.get('biospecimen')) {
+      setModalOpenState(true);
+      setModalDataElementState('biospecimen');
+    }
+  }, [biospecimenState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (geneticState !== baselinePreferenceState.get('genetic')) {
+      setModalOpenState(true);
+      setModalDataElementState('genetic');
+    }
+  }, [geneticState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (mentalHealthState !== baselinePreferenceState.get('mental health')) {
+      setModalOpenState(true);
+      setModalDataElementState('mental health');
+    }
+  }, [mentalHealthState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (sexAndRepState !== baselinePreferenceState.get('sexual and reproductive health')) {
+      setModalOpenState(true);
+      setModalDataElementState('sexual and reproductive health');
+    }
+  }, [sexAndRepState]);
+
+  useEffect(() => {
+    console.log({ baselinePreferenceState });
+    if (familyHistoryState !== baselinePreferenceState.get('family history')) {
+      setModalOpenState(true);
+      setModalDataElementState('family history');
+    }
+  }, [familyHistoryState]);
 
   function anyRequirementNotMet() {
     for (let requiredElement of requiredElements) {
@@ -211,6 +276,24 @@ const StudyDataSharing = () => {
             dataElementsStateMap={dataElementsStateMap}
             dataElementsHandleChangeMap={dataElementsHandleChangeMap}
           />
+          <Modal
+            isOpen={modalOpenState}
+            style={customModalStyles}
+            contentLabel="Would you like to update your baseline Preference?"
+          >
+            <div>
+              You just chose a preference that is different from your {modalDataElementState} baseline preference. Would
+              you like to update your {modalDataElementState} baseline preference?
+            </div>
+            <button onClick={closeModal}>No</button>
+            <button
+              onClick={() => {
+                updateBaseline(modalDataElementState);
+              }}
+            >
+              Yes
+            </button>
+          </Modal>
           <div className={styles.study_data_sharing__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
             <Button label="Next" handleClick={handleOnSubmit} />
