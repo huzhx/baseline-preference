@@ -36,13 +36,22 @@ const StudyDataSharing = () => {
   requiredElements.add('genetic');
   requiredElements.add('family history');
 
-  const [demographicState, setDemographicState] = useState(true);
-  const [generalClinicalState, setGeneralClinicalState] = useState(false);
-  const [biospecimenState, setBiospecimenState] = useState(true);
-  const [geneticState, setGeneticState] = useState(false);
-  const [mentalHealthState, setMentalHealthState] = useState(false);
-  const [sexAndRepState, setSexAndRepState] = useState(true);
-  const [familyHistoryState, setFamilyHistoryState] = useState(true);
+  const baselinePreference = {};
+  baselinePreference['demographic'] = true;
+  baselinePreference['generalClinical'] = false;
+  baselinePreference['biospecimen'] = true;
+  baselinePreference['genetic'] = false;
+  baselinePreference['mentalHealth'] = false;
+  baselinePreference['sexAndRep'] = true;
+  baselinePreference['familyHistory'] = true;
+
+  const [demographicState, setDemographicState] = useState(baselinePreference['demographic']);
+  const [generalClinicalState, setGeneralClinicalState] = useState(baselinePreference['generalClinical']);
+  const [biospecimenState, setBiospecimenState] = useState(baselinePreference['biospecimen']);
+  const [geneticState, setGeneticState] = useState(baselinePreference['genetic']);
+  const [mentalHealthState, setMentalHealthState] = useState(baselinePreference['mentalHealth']);
+  const [sexAndRepState, setSexAndRepState] = useState(baselinePreference['sexAndRep']);
+  const [familyHistoryState, setFamilyHistoryState] = useState(baselinePreference['familyHistory']);
 
   const handleDemographicChange = (event) => {
     setDemographicState(event.target.checked);
