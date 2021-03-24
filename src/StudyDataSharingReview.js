@@ -21,7 +21,7 @@ const StudyDataSharingReview = () => {
   );
 
   const description =
-    'Below are data elements requested by the study. Your  submitted sharing preferences and data usage status for this study have been loaded. The results are read-only.';
+    'This is the data requested by the study. Your data sharing preferences and the study data usage status have been loaded. The results are read-only.';
 
   const dataElements = [
     'demographic',

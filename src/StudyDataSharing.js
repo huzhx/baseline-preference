@@ -27,13 +27,15 @@ const StudyDataSharing = () => {
   switch (status) {
     case 'new':
       description =
-        'Below are the data elements requested by the study. The sharing preferences have been set based on your default data sharing perference. Feel free to update.';
+        'This is the data requested by the study. The items you previously agreed to share in the baseline preferences have been checked already. Would you like to make any changes?';
       break;
     case 'modify':
       description =
-        'Below are data elements requested by the study. Your last submitted sharing preferences for this study have been loaded. Feel free to update.';
+        'This is the data requested by the study. The items you agreed to share for this study have been checked already. Would you like to make any changes?';
       break;
   }
+
+  const orgType = 'A college or university';
 
   const dataElements = [
     'demographic',
@@ -317,8 +319,8 @@ const StudyDataSharing = () => {
             contentLabel="Would you like to update your baseline Preference?"
           >
             <div>
-              You just chose a preference that is different from your {modalDataElementState} baseline preference. Would
-              you like to update your {modalDataElementState} baseline preference?
+              Would you like to make this as your default {modalDataElementState} sharing preference to
+              {' ' + orgType.toLowerCase()}?
             </div>
             <div className={styles.study_data_sharing__button_container}>
               <Button label="No" secondary handleClick={closeModal} />
