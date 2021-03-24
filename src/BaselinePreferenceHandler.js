@@ -4,6 +4,7 @@ import { useRouteMatch, Switch, Route, useHistory } from 'react-router-dom';
 import styles from './BaselinePreferenceHandler.module.css';
 import BaselinePreferenceIntro from './BaselinePreferenceIntro';
 import BaselinePreferenceForm from './BaselinePreferenceForm';
+import BaselinePreferenceSetting from './BaselinePreferenceSetting';
 
 const BaselinePreferenceHandler = () => {
   const { path, url } = useRouteMatch();
@@ -16,20 +17,35 @@ const BaselinePreferenceHandler = () => {
 
   const getPath = useCallback((key) => {
     const nextPaths = new Map();
-    nextPaths.set('intro', `${url}/demographic`);
-    nextPaths.set('demographic', `${url}/general-clinical`);
-    nextPaths.set('general-clinical', `${url}/biospecimen`);
-    nextPaths.set('biospecimen', `${url}/genetic`);
-    nextPaths.set('genetic', `${url}/mental-health`);
-    nextPaths.set('mental-health', `${url}/sexual-and-reproductive-health`);
-    nextPaths.set('sexual-and-reproductive-health', `${url}/family-history`);
-    nextPaths.set('family-history', '/');
+    nextPaths.set('intro', `${url}/setting`);
+    nextPaths.set('v1-setting', `${url}/v1/1/demographic`);
+    nextPaths.set('v1-demographic', `${url}/v1/2/general-clinical`);
+    nextPaths.set('v1-general-clinical', `${url}/v1/3/biospecimen`);
+    nextPaths.set('v1-biospecimen', `${url}/v1/4/genetic`);
+    nextPaths.set('v1-genetic', `${url}/v1/5/mental-health`);
+    nextPaths.set('v1-mental-health', `${url}/v1/6/sexual-and-reproductive-health`);
+    nextPaths.set('v1-sexual-and-reproductive-health', `${url}/v1/7/family-history`);
+    nextPaths.set('v1-family-history', '/');
+    nextPaths.set('v2-setting', `${url}/v2/1/a-doctor-office`);
+    nextPaths.set('v2-a-doctor-office', `${url}/v2/2/a-hospital`);
+    nextPaths.set('v2-a-hospital', `${url}/v2/3/an-insurance-company`);
+    nextPaths.set('v2-an-insurance-company', `${url}/v2/4/a-state-or-local-health-agency`);
+    nextPaths.set('v2-a-state-or-local-health-agency', `${url}/v2/5/a-national-government-health-agency`);
+    nextPaths.set('v2-a-national-government-health-agency', `${url}/v2/6/a-biotechnology-company`);
+    nextPaths.set('v2-a-biotechnology-company', `${url}/v2/7/a-college-or-university`);
+    nextPaths.set('v2-a-college-or-university', '/');
     return nextPaths.get(key);
   }, []);
 
   return (
     <Switch>
-      <Route path={`${path}/:dataElement`}>
+      <Route path={`${path}/setting`}>
+        <BaselinePreferenceSetting cb={getPath} />
+      </Route>
+      <Route path={`${path}/v1/:index/:dataElement`}>
+        <BaselinePreferenceForm cb={getPath} />
+      </Route>
+      <Route path={`${path}/v2/:index/:org`}>
         <BaselinePreferenceForm cb={getPath} />
       </Route>
       <Route path={path}>
