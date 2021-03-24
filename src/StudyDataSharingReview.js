@@ -20,8 +20,7 @@ const StudyDataSharingReview = () => {
     [sticky]
   );
 
-  const description =
-    'This is the data requested by the study. Your data sharing preferences and the study data usage status have been loaded. The results are read-only.';
+  const description = 'This is the data requested and shared with the study. This information is read-only.';
 
   const dataElements = [
     'demographic',
