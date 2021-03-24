@@ -59,7 +59,7 @@ const Home = () => {
         <div className={styles.home__content}>
           <HomeElement label="New Data Requests" unreadNum="2" link="/data-requests" />
           <HomeElement label="Consent History" link="/consent-history" />
-          <HomeElement label="Default Data Sharing Preferences" link="/baseline-preference/demographic" />
+          <HomeElement label="Default Data Sharing Preferences" link="/baseline-preference/v1/1/demographic" />
         </div>
       </div>
       <div className={styles.home__footer}>
