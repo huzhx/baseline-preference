@@ -24,9 +24,9 @@ const DataRequests = () => {
   const newRequests = [
     {
       reqId: '3',
-      institution: 'Observational Health Data Sciences and Informatics (OHDSI)',
-      title:
-        'Development and validation of a prognostic model predicting symptomatic hemorrhagic transformation in acute ischemic stroke',
+      institution: 'Peking University First Hospital',
+      sponsor: 'Peking University First Hospital',
+      title: 'COVID-19 Surveillance Based on Smart Wearable Device',
     },
     {
       reqId: '4',

@@ -39,21 +39,6 @@ const StudyInfo = () => {
     },
     2: {
       reqId: '2',
-      institution: 'Peking University First Hospital',
-      sponsor: 'Peking University First Hospital',
-      title: 'COVID-19 Surveillance Based on Smart Wearable Device',
-      purpose:
-        "This is a prospective, multi-center cohort study. 200 subjects with COVID-19will be included . Wearable device's physiological parameters and clinical data will be continually collected , the investigators aim to explore whether using smart wearable devices is useful to early alerting deterioration of COVID-19.",
-      principleInvestigator: 'Jing Ma',
-      irbContent:
-        'The study protocol has been approved by the Peking University First Hospital Institutional Review Board (IRB) (2020-055). Any protocol modifications will be submitted for the IRB review and approval.',
-      irbApprovalDate: '03/10/2021',
-      irbApprovedBy: 'Peking University First Hospital',
-      additionalInfoURL: 'https://www.clinicaltrials.gov/ct2/show/NCT04459637?cond=COVID-19&draw=2&rank=4',
-      status: 'Data Used',
-    },
-    3: {
-      reqId: '3',
       institution: 'Observational Health Data Sciences and Informatics (OHDSI)',
       sponsor: 'Sun Yat-Sen University',
       title:
@@ -66,6 +51,21 @@ const StudyInfo = () => {
       irbApprovalDate: '01/07/2020',
       irbApprovedBy: 'Sun Yat-Sen University',
       additionalInfoURL: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226718',
+      status: 'Data Used',
+    },
+    3: {
+      reqId: '3',
+      institution: 'Peking University First Hospital',
+      sponsor: 'Peking University First Hospital',
+      title: 'COVID-19 Surveillance Based on Smart Wearable Device',
+      purpose:
+        "This is a prospective, multi-center cohort study. 200 subjects with COVID-19will be included . Wearable device's physiological parameters and clinical data will be continually collected , the investigators aim to explore whether using smart wearable devices is useful to early alerting deterioration of COVID-19.",
+      principleInvestigator: 'Jing Ma',
+      irbContent:
+        'The study protocol has been approved by the Peking University First Hospital Institutional Review Board (IRB) (2020-055). Any protocol modifications will be submitted for the IRB review and approval.',
+      irbApprovalDate: '03/10/2021',
+      irbApprovedBy: 'Peking University First Hospital',
+      additionalInfoURL: 'https://www.clinicaltrials.gov/ct2/show/NCT04459637?cond=COVID-19&draw=2&rank=4',
     },
     4: {
       reqId: '4',
