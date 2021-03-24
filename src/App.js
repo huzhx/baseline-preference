@@ -30,9 +30,7 @@ function App() {
         <Route path="/consent-history">
           <ConsentHistory />
         </Route>
-        <Route path="/data-sharing-setting">
-          <StudyDataSharing />
-        </Route>
+        <Route path="/data-sharing-setting/:status" component={StudyDataSharing} />
         <Route path="/data-sharing-review">
           <StudyDataSharingReview />
         </Route>
