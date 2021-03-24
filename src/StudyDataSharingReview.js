@@ -20,6 +20,9 @@ const StudyDataSharingReview = () => {
     [sticky]
   );
 
+  const description =
+    'Below are data elements requested by the study. Your  submitted sharing preferences and data usage status for this study have been loaded. The results are read-only.';
+
   const dataElements = [
     'demographic',
     'general clinical',
@@ -180,6 +183,7 @@ const StudyDataSharingReview = () => {
       </div>
       <div className={styles.study_data_sharing_review__body}>
         <div className={styles.study_data_sharing_review__content}>
+          <div className={styles.study_data_sharing_review__content__description}>{description}</div>
           <StudyDataSharingForm
             dataElements={dataElements}
             requiredElements={requiredElements}

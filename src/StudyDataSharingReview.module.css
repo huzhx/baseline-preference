@@ -22,6 +22,16 @@
   margin: 0.8em 1.5em 5.8em 1.5em;
 }
 
+.study_data_sharing_review__content__description {
+  margin: 0em 1.5em 2em 1.5em;
+  font-size: 1.2em;
+  font-weight: 500;
+  line-height: 1.4em;
+  letter-spacing: 0.05em;
+  color: var(--secondary-text-color);
+  text-align: justify;
+}
+
 .study_data_sharing_review__footer {
   display: flex;
   flex-direction: row;
