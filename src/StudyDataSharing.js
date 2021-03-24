@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import styles from './StudyDataSharing.module.css';
 import StudyDataSharingForm from './StudyDataSharingForm';
@@ -20,6 +20,20 @@ const StudyDataSharing = () => {
     },
     [sticky]
   );
+
+  const { status } = useParams();
+
+  let description = '';
+  switch (status) {
+    case 'new':
+      description =
+        'Below are the data elements requested by the study. The sharing preferences have been set based on your default data sharing perference. Feel free to update.';
+      break;
+    case 'modify':
+      description =
+        'Below are data elements requested by the study. Your last submitted sharing preferences for this study have been loaded. Feel free to update.';
+      break;
+  }
 
   const dataElements = [
     'demographic',
@@ -291,6 +305,7 @@ const StudyDataSharing = () => {
       </div>
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__content}>
+          <div className={styles.study_data_sharing__content__description}>{description}</div>
           <StudyDataSharingForm
             requiredElements={requiredElements}
             dataElementsStateMap={dataElementsStateMap}
