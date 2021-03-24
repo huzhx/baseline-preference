@@ -93,9 +93,9 @@ const StudyInfo = () => {
   if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Used') {
     path = '/data-sharing-review';
   } else if (typeof studyInfo['status'] === 'undefined') {
-    path = '/data-sharing-setting/new';
+    path = `/data-sharing-setting/${reqId}/new`;
   } else {
-    path = '/data-sharing-setting/modify';
+    path = `/data-sharing-setting/${reqId}/modify`;
   }
 
   const history = useHistory();
