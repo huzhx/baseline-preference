@@ -33,7 +33,7 @@ const BaselinePreferenceForm = ({ cb }) => {
     addon = 'information with';
     highlights = dataElement.split('-').join(' ');
   } else {
-    title = `${index}. Would you share the information below with`;
+    title = `${index}. Would you share the following information with`;
     highlights = org.split('-').join(' ');
   }
 
