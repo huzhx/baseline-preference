@@ -21,7 +21,7 @@ const StudyDataSharing = () => {
     [sticky]
   );
 
-  const { status } = useParams();
+  const { studyId, status } = useParams();
 
   let description = '';
   switch (status) {
@@ -35,7 +35,12 @@ const StudyDataSharing = () => {
       break;
   }
 
-  const orgType = 'A college or university';
+  const orgTypes = {
+    1: 'A college or university',
+    2: 'A state or local health agency',
+    3: 'A hospital',
+    4: 'A college or university',
+  };
 
   const dataElements = [
     'demographic',
@@ -320,7 +325,7 @@ const StudyDataSharing = () => {
           >
             <div>
               Would you like to make this as your default {modalDataElementState} sharing preference to
-              {' ' + orgType.toLowerCase()}?
+              {' ' + orgTypes[studyId].toLowerCase()}?
             </div>
             <div className={styles.study_data_sharing__button_container}>
               <Button label="No" secondary handleClick={closeModal} />
