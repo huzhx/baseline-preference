@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useQuery } from '@apollo/client';
 
 import styles from './Home.module.css';
 import HomeElement from './HomeElement';
@@ -7,6 +8,7 @@ import Footer from './Footer';
 import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import { GET_PENDING_STUDIES_NUMBER } from './GraphQL/Queries';
 
 const Home = () => {
   const [sticky, setSticky] = useState(false);
@@ -17,6 +19,23 @@ const Home = () => {
     },
     [sticky]
   );
+
+  const [pendingStudiesNumber, setPendingStudiesNumber] = useState(null);
+
+  const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER, {
+    variables: {
+      userId: '1',
+    },
+  });
+
+  useEffect(() => {
+    if (data) {
+      setPendingStudiesNumber(data.getPendingStudiesNumber);
+    }
+  }, [data]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
 
   return (
     <div className={styles.home}>
@@ -57,7 +76,7 @@ const Home = () => {
       </div>
       <div className={styles.home__body}>
         <div className={styles.home__content}>
-          <HomeElement label="New Data Requests" unreadNum="2" link="/data-requests" />
+          <HomeElement label="New Data Requests" unreadNum={pendingStudiesNumber} link="/data-requests" />
           <HomeElement label="Consent History" link="/consent-history" />
           <HomeElement label="Default Data Sharing Preferences" link="/baseline-preference/v1/1/demographic" />
         </div>
