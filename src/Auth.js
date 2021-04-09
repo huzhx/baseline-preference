@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -12,13 +12,9 @@ const Auth = () => {
 
   console.log({ accessToken });
 
-  // TODO: invoke api to verify the access_token
+  localStorage.setItem('access_token', accessToken);
 
-  // TODO: if verification succeed, will get the userId and redirect the user to home page
-
-  // TODO: if verfication failed, direct the user back to login page
-
-  return <div></div>;
+  return <Redirect push to="/" />;
 };
 
 export default Auth;
