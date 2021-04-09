@@ -13,11 +13,15 @@ import Portal from './Portal';
 import SignIn from './SignIn';
 import SignInVeriOpt from './SignInVeriOpt';
 import SignInVeriEnterCode from './SignInVeriEnterCode';
+import Auth from './Auth';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/auth">
+          <Auth />
+        </Route>
         <Route path="/baseline-preference">
           <BaselinePreferenceHandler />
         </Route>
