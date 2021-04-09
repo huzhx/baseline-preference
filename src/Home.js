@@ -24,7 +24,7 @@ const Home = () => {
 
   const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER, {
     variables: {
-      userId: '1',
+      userId: localStorage.getItem('user_id'),
     },
   });
 
