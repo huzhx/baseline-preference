@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
+import { Redirect } from 'react-router-dom';
 
 import styles from './Home.module.css';
 import HomeElement from './HomeElement';
@@ -22,11 +23,7 @@ const Home = () => {
 
   const [pendingStudiesNumber, setPendingStudiesNumber] = useState(null);
 
-  const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER, {
-    variables: {
-      userId: localStorage.getItem('user_id'),
-    },
-  });
+  const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER);
 
   useEffect(() => {
     if (data) {
@@ -35,7 +32,9 @@ const Home = () => {
   }, [data]);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (error) {
+    return <Redirect to="/portal-pick" />;
+  }
 
   return (
     <div className={styles.home}>
