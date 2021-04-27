@@ -32,6 +32,10 @@
   text-align: justify;
 }
 
+.study_data_sharing_review__content__description--highlighted {
+  color: var(--primary-color);
+}
+
 .study_data_sharing_review__footer {
   display: flex;
   flex-direction: row;

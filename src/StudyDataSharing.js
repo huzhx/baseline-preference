@@ -312,7 +312,18 @@ const StudyDataSharing = () => {
       </div>
       <div className={styles.study_data_sharing__body}>
         <div className={styles.study_data_sharing__content}>
-          <div className={styles.study_data_sharing__content__description}>{description}</div>
+          <div className={styles.study_data_sharing__content__description}>
+            {description
+              .split('. ')
+              .slice(0, description.split('. ').length - 1)
+              .join('. ') + '. '}
+            <span className={styles['study_data_sharing__content__description--highlighted']}>
+              {description
+                .split('. ')
+                .slice(description.split('. ').length - 1)
+                .join('. ')}
+            </span>
+          </div>
           <StudyDataSharingForm
             requiredElements={requiredElements}
             dataElementsStateMap={dataElementsStateMap}
