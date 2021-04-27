@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
-import { useRouteMatch, Switch, Route, useHistory } from 'react-router-dom';
+import { useRouteMatch, Switch, Route } from 'react-router-dom';
 
-import styles from './BaselinePreferenceHandler.module.css';
 import BaselinePreferenceIntro from './BaselinePreferenceIntro';
 import BaselinePreferenceForm from './BaselinePreferenceForm';
 import BaselinePreferenceSetting from './BaselinePreferenceSetting';
@@ -9,23 +8,17 @@ import BaselinePreferenceSetting from './BaselinePreferenceSetting';
 const BaselinePreferenceHandler = () => {
   const { path, url } = useRouteMatch();
 
-  const history = useHistory();
-
-  const handleClick = (path) => {
-    history.push(path);
-  };
-
   const getPath = useCallback((key) => {
     const nextPaths = new Map();
-    nextPaths.set('intro', `${url}/setting`);
-    nextPaths.set('v1-setting', `${url}/v1/1/demographic`);
-    nextPaths.set('v1-demographic', `${url}/v1/2/general-clinical`);
-    nextPaths.set('v1-general-clinical', `${url}/v1/3/biospecimen`);
-    nextPaths.set('v1-biospecimen', `${url}/v1/4/genetic`);
-    nextPaths.set('v1-genetic', `${url}/v1/5/mental-health`);
-    nextPaths.set('v1-mental-health', `${url}/v1/6/sexual-and-reproductive-health`);
-    nextPaths.set('v1-sexual-and-reproductive-health', `${url}/v1/7/family-history`);
-    nextPaths.set('v1-family-history', '/');
+    nextPaths.set('intro', `${url}/v2/1/a-doctor-office`);
+    // nextPaths.set('v1-setting', `${url}/v1/1/demographic`);
+    // nextPaths.set('v1-demographic', `${url}/v1/2/general-clinical`);
+    // nextPaths.set('v1-general-clinical', `${url}/v1/3/biospecimen`);
+    // nextPaths.set('v1-biospecimen', `${url}/v1/4/genetic`);
+    // nextPaths.set('v1-genetic', `${url}/v1/5/mental-health`);
+    // nextPaths.set('v1-mental-health', `${url}/v1/6/sexual-and-reproductive-health`);
+    // nextPaths.set('v1-sexual-and-reproductive-health', `${url}/v1/7/family-history`);
+    // nextPaths.set('v1-family-history', '/');
     nextPaths.set('v2-setting', `${url}/v2/1/a-doctor-office`);
     nextPaths.set('v2-a-doctor-office', `${url}/v2/2/a-hospital`);
     nextPaths.set('v2-a-hospital', `${url}/v2/3/an-insurance-company`);

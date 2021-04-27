@@ -13,6 +13,10 @@ import { GET_PENDING_STUDIES_NUMBER } from './GraphQL/Queries';
 
 const Home = () => {
   const [sticky, setSticky] = useState(false);
+  const [pendingStudiesNumber, setPendingStudiesNumber] = useState(null);
+  const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER);
+  const baselinePreferenceUrl = '/baseline-preference/v2/1/a-doctor-office';
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
       const isShow = currPos.y <= prevPos.y;
@@ -20,10 +24,6 @@ const Home = () => {
     },
     [sticky]
   );
-
-  const [pendingStudiesNumber, setPendingStudiesNumber] = useState(null);
-
-  const { loading, error, data } = useQuery(GET_PENDING_STUDIES_NUMBER);
 
   useEffect(() => {
     if (data) {
@@ -77,7 +77,7 @@ const Home = () => {
         <div className={styles.home__content}>
           <HomeElement label="New Data Requests" unreadNum={pendingStudiesNumber} link="/data-requests" />
           <HomeElement label="Consent History" link="/consent-history" />
-          <HomeElement label="Default Data Sharing Preferences" link="/baseline-preference/v1/1/demographic" />
+          <HomeElement label="Default Data Sharing Preferences" link={baselinePreferenceUrl} />
         </div>
       </div>
       <div className={styles.home__footer}>
