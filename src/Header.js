@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import styles from './Header.module.css';
+import ReactTooltip from 'react-tooltip';
 
 const Header = ({ title, highlights, addon, noBackground, hasGoBack, tooltipData }) => {
   const history = useHistory();
@@ -37,7 +38,11 @@ const Header = ({ title, highlights, addon, noBackground, hasGoBack, tooltipData
           <span className={styles.header__inline_block}>
             {highlights && <span className={styles['header--highlighted']}> {` ${highlights}`} </span>}
             {tooltipData && (
-              <span className={[styles['header--highlighted'], styles.header__svg].join(' ')}>
+              <span
+                className={[styles['header--highlighted'], styles.header__svg].join(' ')}
+                data-tip={`<p>${tooltipData}</p>`}
+                data-html={true}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -51,6 +56,7 @@ const Header = ({ title, highlights, addon, noBackground, hasGoBack, tooltipData
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                   <line x1="12" y1="17" x2="12.01" y2="17"></line>
                 </svg>
+                <ReactTooltip />
               </span>
             )}
           </span>
