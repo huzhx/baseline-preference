@@ -63,6 +63,19 @@
   background-color: var(--background-color-primary);
 }
 
+.header__svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  margin-bottom: 0.25em;
+}
+
+.header__inline_block {
+  white-space: nowrap;
+  display: inline-block;
+}
+
 .ripple {
   position: relative;
   overflow: hidden;
