@@ -33,7 +33,7 @@ const BaselinePreferenceForm = ({ cb }) => {
     addon = 'information with';
     highlights = dataElement.split('-').join(' ');
   } else {
-    title = `${index}. Would you share the following information with`;
+    title = `${index}. Would you share the following information with `;
     highlights = org.split('-').join(' ');
   }
 
@@ -293,10 +293,10 @@ const BaselinePreferenceForm = ({ cb }) => {
         </NavBar>
       </div>
       <div className={styles.baseline_preference_form__header}>
-        <Header title={title} highlights={highlights} addon={addon} hasGoBack />
+        <Header title={title} highlights={highlights} addon={addon} hasGoBack tooltipData="xxxxxx is xxxxx" />
       </div>
       <div className={styles['baseline_preference_form__header--noBackground']}>
-        <Header title={title} highlights={highlights} addon={addon} noBackground />
+        <Header title={title} highlights={highlights} addon={addon} noBackground tooltipData="xxxxxx is xxxxx" />
       </div>
       <div className={styles.baseline_preference_form__body}>
         <div className={styles.baseline_preference_form__content}>
