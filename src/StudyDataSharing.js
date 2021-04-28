@@ -332,7 +332,7 @@ const StudyDataSharing = () => {
           <Modal
             isOpen={modalOpenState}
             style={customModalStyles}
-            contentLabel="Would you like to update your baseline Preference?"
+            contentLabel="Would you like to update your baseline preference?"
           >
             <div>
               Would you like to change your default {modalDataElementState} sharing preference for research done by
