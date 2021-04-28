@@ -44,6 +44,14 @@
   display: none;
 }
 
+.baseline_preference_form__confetti {
+  z-index: 2;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
 @media (min-width: 603px) {
   .baseline_preference_form__footer {
     display: none;

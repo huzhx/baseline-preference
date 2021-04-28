@@ -10,6 +10,7 @@ import Footer from './Footer';
 import NavBar from './NavBar';
 import IconButton from './IconButton';
 import Modal from 'react-modal';
+import Confetti from 'react-dom-confetti';
 
 const BaselinePreferenceForm = ({ cb }) => {
   const { pathname } = useLocation();
@@ -26,7 +27,7 @@ const BaselinePreferenceForm = ({ cb }) => {
       backgroundColor: 'rgba(240, 240, 240, 0.8)',
     },
     content: {
-      top: '37%',
+      top: '33%',
       left: '50%',
       right: 'auto',
       bottom: 'auto',
@@ -51,6 +52,20 @@ const BaselinePreferenceForm = ({ cb }) => {
     setModalOpenState(false);
   };
 
+  const confettiConfig = {
+    angle: '90',
+    spread: '360',
+    startVelocity: '30',
+    elementCount: '200',
+    dragFriction: '0.10',
+    duration: '1800',
+    stagger: '2',
+    width: '6px',
+    height: '8px',
+    perspective: '452px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
+  };
+
   const { index, dataElement, org } = useParams();
   console.log({ index, dataElement, org, cb });
   let nextPath = '';
@@ -62,9 +77,8 @@ const BaselinePreferenceForm = ({ cb }) => {
   const handleClick = () => {
     console.log({ org });
     if (org === 'a-college-or-university') {
-      console.log('im here');
       setModalOpenState(true);
-      console.log({ modalOpenState });
+      window.scrollTo(0, 0);
     } else {
       history.push(nextPath);
     }
@@ -368,6 +382,12 @@ const BaselinePreferenceForm = ({ cb }) => {
       </div>
       <div className={styles.baseline_preference_form__body}>
         <div className={styles.baseline_preference_form__content}>
+          <Confetti
+            className={styles.baseline_preference_form__confetti}
+            active={modalOpenState}
+            config={confettiConfig}
+          />
+
           {baselinePreferenceFormElements}
 
           <div className={styles.baseline_preference_form__button_container}>
