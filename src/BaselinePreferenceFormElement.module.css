@@ -12,12 +12,22 @@
 .baseline_preference_form_element__label {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  gap: 0.2em;
   padding: 0.8em 0;
   color: var(--primary-text-color);
   font-size: 1.2rem;
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
+}
+
+.baseline_preference_form_element__label__svg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1.1em;
+  height: 1.1em;
 }
 
 .baseline_preference_form_element__buttons {
