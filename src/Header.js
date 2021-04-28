@@ -42,6 +42,7 @@ const Header = ({ title, highlights, addon, noBackground, hasGoBack, tooltipData
                 className={[styles['header--highlighted'], styles.header__svg].join(' ')}
                 data-tip={`<p>${tooltipData}</p>`}
                 data-html={true}
+                data-for="header"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +57,7 @@ const Header = ({ title, highlights, addon, noBackground, hasGoBack, tooltipData
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
                   <line x1="12" y1="17" x2="12.01" y2="17"></line>
                 </svg>
-                <ReactTooltip />
+                <ReactTooltip id="header" />
               </span>
             )}
           </span>
