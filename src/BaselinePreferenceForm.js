@@ -187,6 +187,7 @@ const BaselinePreferenceForm = ({ cb }) => {
   ];
   const labelStateMap = new Map();
   const labelHandleChangeMap = new Map();
+  const labelTooltipDataMap = new Map();
 
   // for v1
   labelStateMap.set(orgLabels[0], doctorOfficeState);
@@ -222,6 +223,14 @@ const BaselinePreferenceForm = ({ cb }) => {
   labelHandleChangeMap.set(dataLabels[5], handleSexAndReproductiveChange);
   labelHandleChangeMap.set(dataLabels[6], handleFamilyHistoryChange);
 
+  labelTooltipDataMap.set(dataLabels[0], `${dataLabels[0]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[1], `${dataLabels[1]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[2], `${dataLabels[2]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[3], `${dataLabels[3]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[4], `${dataLabels[4]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[5], `${dataLabels[5]} stands for ...`);
+  labelTooltipDataMap.set(dataLabels[6], `${dataLabels[6]} stands for ...`);
+
   const options = ['Yes', 'No'];
 
   const baselinePreferenceFormElements = [];
@@ -244,6 +253,7 @@ const BaselinePreferenceForm = ({ cb }) => {
     for (let label of dataLabels) {
       const curCheckedValue = labelStateMap.get(label);
       const handleChange = labelHandleChangeMap.get(label);
+      const tooltipData = labelTooltipDataMap.get(label);
       baselinePreferenceFormElements.push(
         <BaselinePreferenceFormElement
           key={label}
@@ -251,6 +261,7 @@ const BaselinePreferenceForm = ({ cb }) => {
           options={options}
           curCheckedValue={curCheckedValue}
           handleChange={handleChange}
+          tooltipData={tooltipData}
         />
       );
     }
@@ -293,10 +304,22 @@ const BaselinePreferenceForm = ({ cb }) => {
         </NavBar>
       </div>
       <div className={styles.baseline_preference_form__header}>
-        <Header title={title} highlights={highlights} addon={addon} hasGoBack tooltipData="xxxxxx is xxxxx" />
+        <Header
+          title={title}
+          highlights={highlights}
+          addon={addon}
+          hasGoBack
+          tooltipData={`${highlights[0].toUpperCase() + highlights.slice(1)} stands for ...`}
+        />
       </div>
       <div className={styles['baseline_preference_form__header--noBackground']}>
-        <Header title={title} highlights={highlights} addon={addon} noBackground tooltipData="xxxxxx is xxxxx" />
+        <Header
+          title={title}
+          highlights={highlights}
+          addon={addon}
+          noBackground
+          tooltipData={`${highlights[0].toUpperCase() + highlights.slice(1)} stands for ...`}
+        />
       </div>
       <div className={styles.baseline_preference_form__body}>
         <div className={styles.baseline_preference_form__content}>
