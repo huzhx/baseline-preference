@@ -10,6 +10,10 @@
   transform: translateY(0);
 }
 
+.footer--primary {
+  background-color: var(--primary-color);
+}
+
 .footer--hide {
   transform: translateY(100%);
 }
