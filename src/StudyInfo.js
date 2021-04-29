@@ -35,7 +35,7 @@ const StudyInfo = () => {
       irbApprovalDate: '08/11/2020',
       irbApprovedBy: 'Stanford University',
       additionalInfoURL: 'https://www.clinicaltrials.gov/ct2/show/NCT04355767?term=UCSD&cond=COVID-19&draw=2&rank=2',
-      status: 'Data Not Used',
+      status: 'Data Not Shared Yet',
     },
     2: {
       reqId: '2',

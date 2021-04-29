@@ -26,7 +26,7 @@ const ConsentHistory = () => {
       reqId: '1',
       institution: 'Stanford University',
       title: 'Clinical-trial of COVID-19 Convalescent Plasma in Outpatients',
-      status: 'Data Not Used',
+      status: 'Data Not Shared Yet',
     },
     {
       reqId: '2',
@@ -37,7 +37,7 @@ const ConsentHistory = () => {
   ];
 
   const buttonLabelMap = {
-    'Data Not Used': 'Modify Consent',
+    'Data Not Shared Yet': 'Modify Consent',
     'Data Used': 'View Data Used',
   };
 
