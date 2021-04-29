@@ -95,7 +95,7 @@ const DataRequests = () => {
         <div className={styles.data_requests__content}>{requests}</div>
       </div>
       <div className={styles.data_requests__footer}>
-        <Footer alignContentEvenly={true} sticky={sticky}>
+        <Footer alignContentEvenly={true} sticky={sticky} isPrimary>
           <IconButton label="Home" link="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -81,7 +81,7 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.home__footer}>
-        <Footer alignContentEvenly={true} sticky={sticky}>
+        <Footer alignContentEvenly={true} sticky={sticky} isPrimary>
           <IconButton label="Home" link="/" isActive>
             <svg
               xmlns="http://www.w3.org/2000/svg"
