@@ -1,5 +1,5 @@
 .nav_bar {
-  background-color: var(--background-color-light);
+  background-color: var(--primary-color);
   position: fixed;
   max-height: 5em;
   width: 100%;
