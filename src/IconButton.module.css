@@ -1,17 +1,23 @@
 .icon_button {
+  min-width: 10em;
   padding: 0.8em 1.5em;
+  border-radius: 2em;
+  color: var(--primary-color-light);
+  font-size: 0.95rem;
+  line-height: 1.6em;
+  letter-spacing: 0.2em;
   cursor: pointer;
-  color: var(--secondary-text-color);
-  transition: 0.8s;
+  transition: 0.3s;
 }
 
 .icon_button:hover {
-  color: var(--primary-color-dark);
+  background-color: var(--primary-color-dark);
+  color: var(--text-icon);
 }
 
 .icon_button:active,
 .icon_button--active {
-  color: var(--primary-color-dark);
+  color: var(--text-icon);
 }
 
 .icon_button__layout {
@@ -26,7 +32,7 @@
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
-  padding: 0.2em 0.5em 0 0.5em;
+  padding: 0.15em 0.5em 0 0.5em;
 }
 
 .icon_button__svg {
