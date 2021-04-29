@@ -32,13 +32,13 @@ const ConsentHistory = () => {
       reqId: '2',
       institution: 'Peking University First Hospital',
       title: 'COVID-19 Surveillance Based on Smart Wearable Device',
-      status: 'Data Used',
+      status: 'Data Shared',
     },
   ];
 
   const buttonLabelMap = {
     'Data Not Shared Yet': 'Modify Consent',
-    'Data Used': 'View Data Used',
+    'Data Shared': 'View Data Shared',
   };
 
   const studies = [];

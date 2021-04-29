@@ -51,7 +51,7 @@ const StudyInfo = () => {
       irbApprovalDate: '01/07/2020',
       irbApprovedBy: 'Sun Yat-Sen University',
       additionalInfoURL: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226718',
-      status: 'Data Used',
+      status: 'Data Shared',
     },
     3: {
       reqId: '3',
@@ -90,7 +90,7 @@ const StudyInfo = () => {
   console.log(studyInfo);
 
   let path;
-  if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Used') {
+  if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Shared') {
     path = '/data-sharing-review';
   } else if (typeof studyInfo['status'] === 'undefined') {
     path = `/data-sharing-setting/${reqId}/new`;
