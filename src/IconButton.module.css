@@ -2,7 +2,7 @@
   min-width: 10em;
   padding: 0.8em 1.5em;
   border-radius: 2em;
-  color: var(--primary-color-light);
+  color: var(--text-icon);
   font-size: 0.95rem;
   line-height: 1.6em;
   letter-spacing: 0.2em;
@@ -12,7 +12,7 @@
 
 .icon_button:hover {
   background-color: var(--primary-color-dark);
-  color: var(--text-icon);
+  color: var(--primary-color-light);
 }
 
 .icon_button:active,
