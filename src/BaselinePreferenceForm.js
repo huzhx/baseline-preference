@@ -17,35 +17,6 @@ const BaselinePreferenceForm = ({ cb }) => {
 
   const [modalOpenState, setModalOpenState] = useState(false);
 
-  const customModalStyles = {
-    overlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(240, 240, 240, 0.8)',
-    },
-    content: {
-      top: '33%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      border: '1px solid transparent',
-      borderRadius: '2em',
-      boxShadow: '0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1)',
-      padding: '3em 2em 1em 2em',
-      outline: 'none',
-      fontSize: '1rem',
-      fontWeight: '650',
-      lineHeight: '1.6em',
-      letterSpacing: '0.05em',
-      maxWidth: '40em',
-    },
-  };
-
   Modal.setAppElement('body');
 
   const closeModal = () => {
@@ -397,8 +368,9 @@ const BaselinePreferenceForm = ({ cb }) => {
 
           <Modal
             isOpen={modalOpenState}
-            style={customModalStyles}
             contentLabel="Thank you for set up your baseline preference"
+            className="Modal"
+            overlayClassName="Overlay"
           >
             <div>Great! Your baseline preference has been set up / updated. Back to the Home Page?</div>
             <div className={styles.baseline_preference_form__button_container}>
