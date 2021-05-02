@@ -10,6 +10,7 @@
   --text-icon: #ffffff;
   --background-color-light: #ffffff;
   --background-color-dark: rgba(240, 240, 240, 0.7);
+  --background-color-dark-extra: rgba(187, 187, 187, 0.7);
   --background-color-primary: rgba(47, 188, 161, 0.1);
   --background-border-color: #707070;
   --background-border-color-light: #d4d3d3;
@@ -68,5 +69,55 @@ code {
 @media (min-width: 2048px) {
   :root {
     font-size: 100%;
+  }
+}
+
+.Modal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  top: 35%;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  background-color: var(--background-color-light);
+  border: 1px solid transparent;
+  border-radius: 2em;
+  box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
+  padding: 3em 2em 1em 2em;
+  outline: none;
+  font-size: 1em;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  max-width: 40em;
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-color-dark-extra);
+}
+
+@keyframes growDown {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  70% {
+    opacity: 0.5;
+    transform: rotateX(20deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
   }
 }
