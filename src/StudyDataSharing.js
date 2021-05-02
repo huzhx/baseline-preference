@@ -123,8 +123,8 @@ const StudyDataSharing = () => {
 
   Modal.setAppElement('body');
 
-  const closeModal = () => {
-    setModalOpenState(false);
+  const closeModal = (fn) => {
+    fn(false);
   };
 
   const updateBaseline = (dataElement) => {
@@ -311,7 +311,7 @@ const StudyDataSharing = () => {
               {' ' + orgTypes[studyId].toLowerCase()}?
             </div>
             <div className={styles.study_data_sharing__button_container}>
-              <Button label="No" secondary handleClick={closeModal} />
+              <Button label="No" secondary handleClick={() => closeModal(setModalOpenState)} />
               <Button
                 label="Yes"
                 handleClick={() => {
