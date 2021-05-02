@@ -10,6 +10,7 @@ import Footer from './Footer';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
 import Modal from 'react-modal';
+import Confetti from 'react-dom-confetti';
 
 const StudyDataSharing = () => {
   const [sticky, setSticky] = useState(false);
@@ -121,11 +122,26 @@ const StudyDataSharing = () => {
   const [modalOpenState, setModalOpenState] = useState(false);
   const [modalDataElementState, setModalDataElementState] = useState(null);
   const [confirmModalOpenSate, setConfirmModalOpenState] = useState(false);
+  const [closureModalOpenState, setClosureModalOpenState] = useState(false);
 
   Modal.setAppElement('body');
 
   const closeModal = (fn) => {
     fn(false);
+  };
+
+  const confettiConfig = {
+    angle: '90',
+    spread: '360',
+    startVelocity: '30',
+    elementCount: '200',
+    dragFriction: '0.10',
+    duration: '1800',
+    stagger: '2',
+    width: '6px',
+    height: '8px',
+    perspective: '452px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 
   const updateBaseline = (dataElement) => {
@@ -235,15 +251,18 @@ const StudyDataSharing = () => {
   };
 
   const handleOnSubmit = () => {
-    const state = {};
-    let path = '/';
     if (anyRequirementNotMet()) {
+      const state = {};
+      let path = '/';
       state['declinedElements'] = getDeclinedElements();
       state['requiredElementsNumber'] = requiredElements.size;
       state['declineSurveyPathMap'] = getDeclineSurveyPaths(state['declinedElements']);
       path = `/decline-survey/${state['declinedElements'][0]}`;
+      history.push(path, state);
+    } else {
+      setConfirmModalOpenState(false);
+      setClosureModalOpenState(true);
     }
-    history.push(path, state);
   };
 
   return (
@@ -300,6 +319,11 @@ const StudyDataSharing = () => {
                 .join('. ')}
             </span>
           </div>
+          <Confetti
+            className={styles.study_data_sharing__confetti}
+            active={closureModalOpenState}
+            config={confettiConfig}
+          />
           <StudyDataSharingForm
             requiredElements={requiredElements}
             dataElementsStateMap={dataElementsStateMap}
@@ -339,6 +363,22 @@ const StudyDataSharing = () => {
             <div className={styles.study_data_sharing__button_container}>
               <Button label="No" secondary handleClick={() => closeModal(setConfirmModalOpenState)} />
               <Button label="Yes" handleClick={handleOnSubmit} />
+            </div>
+          </Modal>
+          <Modal
+            isOpen={closureModalOpenState}
+            contentLabel="Thank you for submission"
+            className="Modal"
+            overlayClassName="Overlay"
+          >
+            <div>Thank you for your submission! You are all set. You will be back to the Home Page.</div>
+            <div className={styles.study_data_sharing__button_container}>
+              <Button
+                label="Ok"
+                handleClick={() => {
+                  history.push('/');
+                }}
+              />
             </div>
           </Modal>
         </div>
