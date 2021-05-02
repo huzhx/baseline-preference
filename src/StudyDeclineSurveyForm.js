@@ -38,7 +38,11 @@ const StudyDeclineSurveyForm = ({
       </div>
       {radioGroup}
       <div className={styles.study_decline_survey_form__comment}>
-        <Textarea placeholder="Any additional information" onChange={handleCommentChange} value={commentState} />
+        <Textarea
+          placeholder="Any additional information (optional)"
+          onChange={handleCommentChange}
+          value={commentState}
+        />
       </div>
     </div>
   );
