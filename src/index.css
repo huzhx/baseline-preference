@@ -85,14 +85,14 @@ code {
   background-color: var(--background-color-light);
   border: 1px solid transparent;
   border-radius: 2em;
-  box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   padding: 3em 2em 1em 2em;
   outline: none;
-  font-size: 1em;
+  font-size: 1.1rem;
   font-weight: 650;
   line-height: 1.6em;
   letter-spacing: 0.05em;
-  max-width: 40em;
+  max-width: 36.5em;
   animation: growDown 300ms ease-in-out forwards;
   transform-origin: top center;
 }

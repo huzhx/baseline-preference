@@ -24,9 +24,9 @@
 
 .study_data_sharing_review__content__description {
   margin: 0em 1.5em 2em 1.5em;
-  font-size: 1.2em;
-  font-weight: 500;
-  line-height: 1.4em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6em;
   letter-spacing: 0.05em;
   color: var(--secondary-text-color);
   text-align: justify;

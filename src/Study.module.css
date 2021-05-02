@@ -16,10 +16,12 @@
 .study__content {
   display: flex;
   flex-direction: column;
+  font-weight: 600;
 }
 
 .study__content--highlighted {
   color: var(--primary-color);
+  font-weight: 650;
 }
 
 .study a {

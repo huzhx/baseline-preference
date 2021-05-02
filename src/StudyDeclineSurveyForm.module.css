@@ -8,8 +8,8 @@
 
 .study_decline_survey_form__question {
   color: var(--primary-text-color);
-  font-size: 1rem;
-  font-weight: 650;
+  font-size: 1.2rem;
+  font-weight: 600;
   line-height: 1.6em;
   letter-spacing: 0.05em;
   padding: 0.8em 0;
@@ -17,6 +17,7 @@
 
 .study_decline_survey_form__question--highlighted {
   color: var(--primary-color-dark);
+  font-weight: 650;
 }
 
 .study_decline_survey_form__comment {
