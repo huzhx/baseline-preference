@@ -120,6 +120,7 @@ const StudyDataSharing = () => {
 
   const [modalOpenState, setModalOpenState] = useState(false);
   const [modalDataElementState, setModalDataElementState] = useState(null);
+  const [confirmModalOpenSate, setConfirmModalOpenState] = useState(false);
 
   Modal.setAppElement('body');
 
@@ -229,6 +230,10 @@ const StudyDataSharing = () => {
   const history = useHistory();
   const goBack = () => history.goBack();
 
+  const handleConfirmation = () => {
+    setConfirmModalOpenState(true);
+  };
+
   const handleOnSubmit = () => {
     const state = {};
     let path = '/';
@@ -322,13 +327,25 @@ const StudyDataSharing = () => {
           </Modal>
           <div className={styles.study_data_sharing__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
-            <Button label="Next" handleClick={handleOnSubmit} />
+            <Button label="Next" handleClick={handleConfirmation} />
           </div>
+          <Modal
+            isOpen={confirmModalOpenSate}
+            contentLabel="Submission confirmation"
+            className="Modal"
+            overlayClassName="Overlay"
+          >
+            <div>Are you sure you want to submit?</div>
+            <div className={styles.study_data_sharing__button_container}>
+              <Button label="No" secondary handleClick={() => closeModal(setConfirmModalOpenState)} />
+              <Button label="Yes" handleClick={handleOnSubmit} />
+            </div>
+          </Modal>
         </div>
       </div>
       <div className={styles.study_data_sharing__footer}>
         <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Next" handleClick={handleOnSubmit} />
+          <Button label="Next" handleClick={handleConfirmation} />
         </Footer>
       </div>
     </div>
