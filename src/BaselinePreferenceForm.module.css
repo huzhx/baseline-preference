@@ -45,7 +45,7 @@
 }
 
 .baseline_preference_form__confetti {
-  z-index: 2;
+  z-index: 3;
   margin: 0;
   position: absolute;
   top: 50%;
