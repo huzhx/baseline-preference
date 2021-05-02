@@ -9,6 +9,7 @@ import { useScrollPosition } from './UseScrollPosition';
 import Footer from './Footer';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
+import Modal from 'react-modal';
 
 const StudyDataSharingReview = () => {
   const [sticky, setSticky] = useState(false);
@@ -132,12 +133,21 @@ const StudyDataSharingReview = () => {
   const history = useHistory();
   const goBack = () => history.goBack();
 
+  const [modalOpenState, setModalOpenState] = useState(false);
+
+  Modal.setAppElement('body');
+
+  const closeModal = () => {
+    setModalOpenState(false);
+  };
+
   const handleOnSubmit = () => {
-    let path = '/';
     if (anyRequirementNotMet()) {
-      path = '/decline-survey';
+      const path = '/decline-survey';
+      history.push(path);
+    } else {
+      setModalOpenState(true);
     }
-    history.push(path);
   };
 
   return (
@@ -205,6 +215,26 @@ const StudyDataSharingReview = () => {
             <Button label="Back" secondary handleClick={goBack} />
             <Button label="Next" handleClick={handleOnSubmit} />
           </div>
+
+          <Modal
+            isOpen={modalOpenState}
+            contentLabel="Thank you for your participant"
+            className="Modal"
+            overlayClassName="Overlay"
+          >
+            <div className={styles.study_data_sharing_review__modal_content}>
+              Thank you for your participant! Back to the Home Page?
+            </div>
+            <div className={styles.study_data_sharing_review__button_container}>
+              <Button label="No" secondary handleClick={closeModal} />
+              <Button
+                label="Yes"
+                handleClick={() => {
+                  history.push('/');
+                }}
+              />
+            </div>
+          </Modal>
         </div>
       </div>
       <div className={styles.study_data_sharing_review__footer}>

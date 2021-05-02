@@ -60,6 +60,10 @@
   display: none;
 }
 
+.study_data_sharing_review__modal_content {
+  margin-bottom: 2em;
+}
+
 @media (min-width: 603px) {
   .study_data_sharing_review__footer {
     display: none;
