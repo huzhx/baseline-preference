@@ -8,7 +8,7 @@
   --primary-text-color: #212121;
   --secondary-text-color: #888787;
   --text-icon: #ffffff;
-  --background-color-light: #ffffff;
+  --background-color-light: #ffffffaf;
   --background-color-dark: rgba(240, 240, 240, 0.7);
   --background-color-dark-extra: rgba(187, 187, 187, 0.7);
   --background-color-primary: rgba(47, 188, 161, 0.1);
@@ -20,6 +20,7 @@
   --button-box-shadow-primay: 0 0 0.3em #31b39b;
   --button-box-shadow-primay-extra: 0 0 0.3em #2a9481;
   font-size: 60%;
+  --nav-height: 4.5em;
 }
 
 *,
@@ -104,6 +105,12 @@ code {
   right: 0;
   bottom: 0;
   background-color: var(--background-color-dark-extra);
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @keyframes growDown {
