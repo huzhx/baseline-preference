@@ -15,7 +15,7 @@ const IconButton = ({ label, children, isActive, handleOnClick, flat, link = '/'
         onClick={handleOnClick}
       >
         <div className={flat ? [styles.icon_button__layout, styles.flat].join(' ') : styles.icon_button__layout}>
-          <span className={styles.icon_button__svg}>{children}</span>
+          <div className={styles.icon_button__svg}>{children}</div>
           <div className={[styles.icon_button__label, styles.no_select].join(' ')}>{label}</div>
         </div>
       </div>
