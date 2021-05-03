@@ -46,7 +46,7 @@
   justify-content: center;
 }
 
-svg {
+.icon_button__svg svg {
   width: 2.1em;
   height: 2.1em;
 }
