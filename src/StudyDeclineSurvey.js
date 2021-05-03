@@ -9,6 +9,8 @@ import { useScrollPosition } from './UseScrollPosition';
 import IconButton from './IconButton';
 import NavBar from './NavBar';
 import StudyDeclineSurveyFrom from './StudyDeclineSurveyForm';
+import Modal from 'react-modal';
+import Confetti from 'react-dom-confetti';
 
 const StudyDeclineSurvey = ({
   location: {
@@ -44,15 +46,36 @@ const StudyDeclineSurvey = ({
   const history = useHistory();
   const goBack = () => history.goBack();
 
+  const [modalOpenState, setModalOpenState] = useState(false);
+
   const submitButtonHandler = () => {
     const nextPath = declineSurveyPathMap[declinedElement].nextPath;
-    const state = {
-      declinedElements: declinedElements,
-      requiredElementsNumber: requiredElementsNumber,
-      declineSurveyPathMap: declineSurveyPathMap,
-    };
 
-    history.push(nextPath, state);
+    if (nextPath === '/') {
+      setModalOpenState(true);
+    } else {
+      const state = {
+        declinedElements: declinedElements,
+        requiredElementsNumber: requiredElementsNumber,
+        declineSurveyPathMap: declineSurveyPathMap,
+      };
+
+      history.push(nextPath, state);
+    }
+  };
+
+  const confettiConfig = {
+    angle: '90',
+    spread: '360',
+    startVelocity: '30',
+    elementCount: '200',
+    dragFriction: '0.10',
+    duration: '1800',
+    stagger: '2',
+    width: '6px',
+    height: '8px',
+    perspective: '452px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a'],
   };
 
   let surveyTitle = '';
@@ -97,13 +120,14 @@ const StudyDeclineSurvey = ({
         </NavBar>
       </div>
       <div className={styles.study_survey__header}>
-        <Header title={surveyTitle} hasGoBack />
+        <Header title={surveyTitle} />
       </div>
       <div className={styles['study_survey__header--noBackground']}>
         <Header title={surveyTitle} noBackground />
       </div>
       <div className={styles.study_survey__body}>
         <div className={styles.study_survey__content}>
+          <Confetti className={styles.study_survey__confetti} active={modalOpenState} config={confettiConfig} />
           <StudyDeclineSurveyFrom
             declineState={declineState}
             handleDeclineChange={handleDeclineChange}
@@ -112,9 +136,24 @@ const StudyDeclineSurvey = ({
             declinedElement={declinedElement}
           />
           <div className={styles.study_survey__button_container}>
-            <Button label="Back" secondary handleClick={goBack} />
             <Button label="Next" handleClick={submitButtonHandler} />
           </div>
+          <Modal
+            isOpen={modalOpenState}
+            contentLabel="Thank you for submission"
+            className="Modal"
+            overlayClassName="Overlay"
+          >
+            <div>Thank you for your submission! You are all set. You will be back to the Home Page.</div>
+            <div className={styles.study_survey__button_container}>
+              <Button
+                label="Ok"
+                handleClick={() => {
+                  history.push('/');
+                }}
+              />
+            </div>
+          </Modal>
         </div>
       </div>
       <div className={styles.study_survey__footer}>
