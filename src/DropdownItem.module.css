@@ -1,0 +1,33 @@
+.menu_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: baseline;
+  border-radius: 1em;
+  transition: background 300ms;
+  padding: 0.5em;
+  font-size: 1.18rem;
+  font-weight: 650;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
+  color: var(--primary-text-color);
+  cursor: pointer;
+}
+
+.menu_item__icon {
+  margin-right: 0.5em;
+  display: flex;
+}
+
+.menu_item__icon:hover {
+  filter: none;
+}
+
+.menu_item:hover {
+  color: var(--primary-color-dark-extra);
+  background-color: var(--background-color-primary);
+}
+
+.menu_item__icon_right {
+  margin-left: auto;
+}
