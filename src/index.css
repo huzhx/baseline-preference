@@ -12,7 +12,7 @@
   --secondary-text-color: #888787;
   --text-icon: #ffffff;
   --background-color-light: #fffffff3;
-  --background-color-dark: rgba(233, 232, 232, 0.76);
+  --background-color-dark: rgba(233, 232, 232, 0.568);
   --background-color-dark-extra: rgba(187, 187, 187, 0.7);
   --background-color-primary: hsla(var(--hue), var(--saturation), var(--light), 0.2);
   --background-border-color: #707070;
@@ -110,8 +110,8 @@ li {
 }
 
 input[type='range'] {
-  --thumbSize: 1.4rem;
-  --trackSize: 0.9rem;
+  --thumbSize: 1.2rem;
+  --trackSize: 0.8rem;
   --thumbBg: var(--primary-color);
   --trackBg: var(--background-color-dark);
   --progressBg: var(--primary-color);

@@ -19,6 +19,11 @@
   display: flex;
 }
 
+.menu_item__icon svg {
+  height: 1.2em;
+  width: 1.2em;
+}
+
 .menu_item__icon:hover {
   filter: none;
 }
