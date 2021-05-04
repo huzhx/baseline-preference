@@ -20,7 +20,8 @@ const StudyDataSharingReview = () => {
     [sticky]
   );
 
-  const description = 'This is the data requested and shared with the study. This information is read-only.';
+  const description =
+    'This is the data requested and shared with the study. This information is read-only. Please note: not all subjects are always selected.';
 
   const dataElements = [
     'demographic',
@@ -165,12 +166,12 @@ const StudyDataSharingReview = () => {
           <div className={styles.study_data_sharing_review__content__description}>
             {description
               .split('. ')
-              .slice(0, description.split('. ').length - 1)
+              .slice(0, description.split('. ').length - 2)
               .join('. ') + '. '}
             <span className={styles['study_data_sharing_review__content__description--highlighted']}>
               {description
                 .split('. ')
-                .slice(description.split('. ').length - 1)
+                .slice(description.split('. ').length - 2)
                 .join('. ')}
             </span>
           </div>
