@@ -1,0 +1,10 @@
+.slider__container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  cursor: pointer;
+}
+
+.slider__input {
+  flex-grow: 1;
+}
