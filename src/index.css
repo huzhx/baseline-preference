@@ -1,24 +1,27 @@
 :root {
   box-sizing: border-box;
-  --primary-color: #2fbca1;
-  --primary-color-dark: #29af97;
-  --primary-color-dark-extra: #2a9481;
-  --primary-color-light: #e4f6f2;
-  --primary-color-light-extra: #f3fefb;
+  --hue: 169;
+  --saturation: 60%;
+  --light: 46%;
+  --primary-color: hsl(var(--hue), var(--saturation), var(--light));
+  --primary-color-dark: hsl(var(--hue), var(--saturation), calc(var(--light) - 8%));
+  --primary-color-dark-extra: hsl(var(--hue), var(--saturation), calc(var(--light) - 12%));
+  --primary-color-light: hsl(var(--hue), var(--saturation), calc(var(--light) + 8%));
+  --primary-color-light-extra: hsl(var(--hue), var(--saturation), calc(var(--light) + 12%));
   --primary-text-color: #212121;
   --secondary-text-color: #888787;
   --text-icon: #ffffff;
   --background-color-light: #fffffff3;
   --background-color-dark: rgba(240, 240, 240, 0.7);
   --background-color-dark-extra: rgba(187, 187, 187, 0.7);
-  --background-color-primary: rgba(47, 188, 161, 0.1);
+  --background-color-primary: hsla(var(--hue), var(--saturation), var(--light), 0.2);
   --background-border-color: #707070;
   --background-border-color-light: #d4d3d3;
   --box-shadow: 0 0.2em 0.5em 0 rgba(0, 0, 0, 0.1);
   --button-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.3);
   --button-box-shadow-light: 0 0 0.3em rgba(0, 0, 0, 0.5);
-  --button-box-shadow-primay: 0 0 0.3em #31b39b;
-  --button-box-shadow-primay-extra: 0 0 0.3em #2a9481;
+  --button-box-shadow-primay: 0 0 0.3em var(--primary-color);
+  --button-box-shadow-primay-extra: 0 0 0.3em var(--primary-color-dark);
   font-size: 60%;
   --nav-height: 4.5em;
 }
@@ -107,7 +110,8 @@ code {
   background-color: var(--background-color-dark-extra);
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
