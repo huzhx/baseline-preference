@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     if (data) {
-      setPendingStudiesNumber(data.getPendingStudiesNumber);
+      setPendingStudiesNumber(data.pendingStudiesNumber);
     }
   }, [data]);
 
