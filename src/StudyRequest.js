@@ -13,7 +13,7 @@ const StudyRequest = ({ studyInfo, buttonLabel, buttonHandler }) => {
         title={studyInfo.title}
         status={studyInfo.status}
       />
-      <div className={styles.study_request__button_container}>
+      <div data-testid="studyRequestButtonContainer" className={styles.study_request__button_container}>
         <Button label={buttonLabel} handleClick={buttonHandler} />
       </div>
     </div>

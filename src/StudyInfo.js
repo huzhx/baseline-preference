@@ -125,7 +125,7 @@ const StudyInfo = () => {
             irbApprovedBy={studyInfo.irbApprovedBy}
             additionalInfoURL={studyInfo.additionalInfoURL}
           />
-          <div className={styles.study_info__button_container}>
+          <div data-testid="studyInfoButtonContainer" className={styles.study_info__button_container}>
             <Button label="Back" secondary handleClick={goBack} />
             <Button label="Next" handleClick={goForward} />
           </div>
