@@ -19,7 +19,8 @@ const BaselinePreferenceIntro = ({ cb }) => {
     [sticky]
   );
 
-  const introduction = 'Welcome to iAGREE! You are a first time user. Please set up your data sharing preferences.';
+  const introduction =
+    'Welcome to iAGREE! You are a first time user. Please set up your data sharing preferences. You can always edit your preferences later.';
   const buttonLabel = 'next';
 
   const nextPath = cb('intro');
