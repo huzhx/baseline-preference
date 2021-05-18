@@ -13,6 +13,7 @@ const Study = ({
   irbApprovedBy,
   additionalInfoURL,
   status,
+  sharedElements,
 }) => {
   return (
     <div className={styles.study}>
@@ -34,6 +35,12 @@ const Study = ({
         <p className={styles.study__content}>
           <span className={styles['study__content--highlighted']}>Status:</span>
           <span>{status}</span>
+        </p>
+      )}
+      {sharedElements && (
+        <p className={styles.study__content}>
+          <span className={styles['study__content--highlighted']}>Shared Data Elements:</span>
+          <span>{sharedElements}</span>
         </p>
       )}
       {purpose && (
