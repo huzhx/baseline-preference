@@ -12,6 +12,7 @@ const StudyRequest = ({ studyInfo, buttonLabel, buttonHandler }) => {
         institution={studyInfo.institution}
         title={studyInfo.title}
         status={studyInfo.status}
+        sharedElements={studyInfo.sharedElements}
       />
       <div data-testid="studyRequestButtonContainer" className={styles.study_request__button_container}>
         <Button label={buttonLabel} handleClick={buttonHandler} />
