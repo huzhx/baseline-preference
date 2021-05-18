@@ -2,12 +2,15 @@ import { MdAccountCircle } from 'react-icons/md';
 import NavItem from './NavItem';
 import DropdownMenu from './DropdownMenu';
 import DropdownItem from './DropdownItem';
+import NotificationPreference from './NotificationPreference';
 
 const Profile = () => {
   return (
-    <NavItem icon={<MdAccountCircle />}>
+    <NavItem testId="profileContainer" icon={<MdAccountCircle />}>
       <DropdownMenu>
-        <DropdownItem>Notifcation preference setting</DropdownItem>
+        <DropdownItem>
+          <NotificationPreference />
+        </DropdownItem>
       </DropdownMenu>
     </NavItem>
   );
