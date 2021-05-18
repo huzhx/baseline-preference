@@ -26,19 +26,19 @@ const ConsentHistory = () => {
       reqId: '1',
       institution: 'Stanford University',
       title: 'Clinical-trial of COVID-19 Convalescent Plasma in Outpatients',
-      status: 'Data Not Shared Yet',
+      status: 'Data Not Shared with Research Team',
     },
     {
       reqId: '2',
       institution: 'Peking University First Hospital',
       title: 'COVID-19 Surveillance Based on Smart Wearable Device',
-      status: 'Data Shared',
+      status: 'Data Shared with Research Team',
     },
   ];
 
   const buttonLabelMap = {
-    'Data Not Shared Yet': 'Modify Consent',
-    'Data Shared': 'View Data Shared',
+    'Data Not Shared with Research Team': 'Modify Consent',
+    'Data Shared with Research Team': 'View Data Shared',
   };
 
   const studies = [];

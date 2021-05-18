@@ -34,7 +34,7 @@ const StudyInfo = () => {
       irbApprovalDate: '08/11/2020',
       irbApprovedBy: 'Stanford University',
       additionalInfoURL: 'https://www.clinicaltrials.gov/ct2/show/NCT04355767?term=UCSD&cond=COVID-19&draw=2&rank=2',
-      status: 'Data Not Shared Yet',
+      status: 'Data Not Shared with Research Team',
     },
     2: {
       reqId: '2',
@@ -50,7 +50,7 @@ const StudyInfo = () => {
       irbApprovalDate: '01/07/2020',
       irbApprovedBy: 'Sun Yat-Sen University',
       additionalInfoURL: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0226718',
-      status: 'Data Shared',
+      status: 'Data Shared with Research Team',
     },
     3: {
       reqId: '3',
@@ -89,7 +89,7 @@ const StudyInfo = () => {
   console.log(studyInfo);
 
   let path;
-  if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Shared') {
+  if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Shared with Research Team') {
     path = '/data-sharing-review';
   } else if (typeof studyInfo['status'] === 'undefined') {
     path = `/data-sharing-setting/${reqId}/new`;
