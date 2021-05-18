@@ -1,9 +1,9 @@
 .data_sharing_element {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   column-gap: 3%;
   grid-template-rows: auto;
-  align-items: center;
+  align-items: start;
   padding: 0.8em 0;
   color: var(--primary-text-color);
   font-size: 1.1rem;
@@ -19,6 +19,13 @@
 
 .data_sharing_element__data_element {
   justify-self: flex-start;
+}
+
+.data_sharing_element__data_examples {
+  justify-self: flex-start;
+  text-transform: none;
+  font-size: 1rem;
+  font-weight: 550;
 }
 
 .data_sharing_element__checker {

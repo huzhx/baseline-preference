@@ -32,6 +32,12 @@ const StudyDataSharingForm = ({
         }
       >
         <span className={[styles.study_data_sharing_form__label, styles.align_left].join(' ')}>Data Requested</span>
+        <span
+          data-testid="dataExamples"
+          className={[styles.study_data_sharing_form__label, styles.align_left].join(' ')}
+        >
+          Data Examples
+        </span>
         <span className={styles.study_data_sharing_form__label}>Agree to Share</span>
         {usedElements && <span className={styles.study_data_sharing_form__label}>Data Shared</span>}
       </div>
