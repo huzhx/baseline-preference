@@ -1,4 +1,4 @@
-export default dataExamples = {
+const dataExamples = {
   demographic: 'Age, Sex, Race, Ethnicity, Sexual Orientation',
   'general clinical': '',
   biospecimen: 'Tissue, Blood, Urine',
@@ -8,3 +8,5 @@ export default dataExamples = {
   'family history':
     'Substance abuse related disease or condition, Mental health disease or condition, Sexual or reproductive disease or condition',
 };
+
+export default dataExamples;
