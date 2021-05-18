@@ -33,6 +33,7 @@ const ConsentHistory = () => {
       institution: 'Peking University First Hospital',
       title: 'COVID-19 Surveillance Based on Smart Wearable Device',
       status: 'Data Shared with Research Team',
+      sharedElements: 'Demographic, Genetic, Mental Health',
     },
   ];
 
@@ -47,6 +48,7 @@ const ConsentHistory = () => {
       title: consentItem.title,
       institution: consentItem.institution,
       status: consentItem.status,
+      sharedElements: consentItem.sharedElements || '',
     };
     const consentStatus = consentItem.status;
     const buttonLabel = buttonLabelMap[consentStatus];
