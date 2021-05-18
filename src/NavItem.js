@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import styles from './NavItem.module.css';
 import useOutsideAlerter from './hooks/useOutsideAlerter';
 
-const NavItem = ({ icon, children }) => {
+const NavItem = ({ testId, icon, children }) => {
   const [open, setOpen] = useState(false);
 
   const wrapperRef = useRef(null);
@@ -19,7 +19,7 @@ const NavItem = ({ icon, children }) => {
   };
 
   return (
-    <div className={styles.nav_item__container} ref={wrapperRef}>
+    <div testId={testId} className={styles.nav_item__container} ref={wrapperRef}>
       <li className={styles.nav_item}>
         <div
           className={[styles.nav_item__icon_button, styles.ripple].join(' ')}
