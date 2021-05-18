@@ -212,7 +212,7 @@ const BaselinePreferenceForm = ({ cb }) => {
     'Genetic information',
     'Mental health information',
     'Sexual and reproductive health information',
-    'Family history information',
+    'Family health history information',
   ];
   const labelStateMap = new Map();
   const labelHandleChangeMap = new Map();

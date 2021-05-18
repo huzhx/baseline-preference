@@ -30,26 +30,26 @@ const StudyDataSharingReview = () => {
     'genetic',
     'mental health',
     'sexual and reproductive health',
-    'family history',
+    'family health history',
   ];
 
   const requiredElements = new Set();
   requiredElements.add('demographic');
   requiredElements.add('biospecimen');
   requiredElements.add('genetic');
-  requiredElements.add('family history');
+  requiredElements.add('family health history');
 
   const consentedElements = new Set();
   consentedElements.add('demographic');
   consentedElements.add('biospecimen');
   consentedElements.add('genetic');
   consentedElements.add('sexual and reproductive health');
-  consentedElements.add('family history');
+  consentedElements.add('family health history');
 
   const usedElements = new Set();
   usedElements.add('biospecimen');
   usedElements.add('genetic');
-  usedElements.add('family history');
+  usedElements.add('family health history');
 
   const [demographicState, setDemographicState] = useState(consentedElements.has('demographic'));
   const [generalClinicalState, setGeneralClinicalState] = useState(consentedElements.has('general clinical'));
@@ -57,7 +57,7 @@ const StudyDataSharingReview = () => {
   const [geneticState, setGeneticState] = useState(consentedElements.has('genetic'));
   const [mentalHealthState, setMentalHealthState] = useState(consentedElements.has('mental health'));
   const [sexAndRepState, setSexAndRepState] = useState(consentedElements.has('sexual and reproductive health'));
-  const [familyHistoryState, setFamilyHistoryState] = useState(consentedElements.has('family history'));
+  const [familyHistoryState, setFamilyHistoryState] = useState(consentedElements.has('family health history'));
 
   const handleDemographicChange = (event) => {
     setDemographicState(event.target.checked);

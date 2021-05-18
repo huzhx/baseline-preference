@@ -49,14 +49,14 @@ const StudyDataSharing = () => {
     'genetic',
     'mental health',
     'sexual and reproductive health',
-    'family history',
+    'family health history',
   ];
 
   const requiredElements = new Set();
   requiredElements.add('demographic');
   requiredElements.add('biospecimen');
   requiredElements.add('genetic');
-  requiredElements.add('family history');
+  requiredElements.add('family health history');
 
   const baselinePreference = new Map();
   baselinePreference.set('demographic', true);
@@ -65,7 +65,7 @@ const StudyDataSharing = () => {
   baselinePreference.set('genetic', false);
   baselinePreference.set('mental health', false);
   baselinePreference.set('sexual and reproductive health', true);
-  baselinePreference.set('family history', true);
+  baselinePreference.set('family health history', true);
 
   const [baselinePreferenceState, setBaselinePreferenceState] = useState(baselinePreference);
 
@@ -75,7 +75,7 @@ const StudyDataSharing = () => {
   const [geneticState, setGeneticState] = useState(baselinePreferenceState.get('genetic'));
   const [mentalHealthState, setMentalHealthState] = useState(baselinePreferenceState.get('mental health'));
   const [sexAndRepState, setSexAndRepState] = useState(baselinePreferenceState.get('sexual and reproductive health'));
-  const [familyHistoryState, setFamilyHistoryState] = useState(baselinePreferenceState.get('family history'));
+  const [familyHistoryState, setFamilyHistoryState] = useState(baselinePreferenceState.get('family health history'));
 
   const handleDemographicChange = (event) => {
     setDemographicState(event.target.checked);
@@ -201,9 +201,9 @@ const StudyDataSharing = () => {
 
   useEffect(() => {
     console.log({ baselinePreferenceState });
-    if (familyHistoryState !== baselinePreferenceState.get('family history')) {
+    if (familyHistoryState !== baselinePreferenceState.get('family health history')) {
       setModalOpenState(true);
-      setModalDataElementState('family history');
+      setModalDataElementState('family health history');
     }
   }, [familyHistoryState]);
 
