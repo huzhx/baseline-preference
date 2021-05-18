@@ -88,9 +88,11 @@ const StudyInfo = () => {
 
   console.log(studyInfo);
 
+  let hasBackOnly = false;
+
   let path;
   if (typeof studyInfo['status'] !== 'undefined' && studyInfo['status'] === 'Data Shared with Research Team') {
-    path = '/data-sharing-review';
+    hasBackOnly = true;
   } else if (typeof studyInfo['status'] === 'undefined') {
     path = `/data-sharing-setting/${reqId}/new`;
   } else {
@@ -126,16 +128,18 @@ const StudyInfo = () => {
             additionalInfoURL={studyInfo.additionalInfoURL}
           />
           <div data-testid="studyInfoButtonContainer" className={styles.study_info__button_container}>
-            <Button label="Back" secondary handleClick={goBack} />
-            <Button label="Next" handleClick={goForward} />
+            <Button label="Back" secondary={hasBackOnly ? false : true} handleClick={goBack} />
+            {!hasBackOnly && <Button label="Next" handleClick={goForward} />}
           </div>
         </div>
       </div>
-      <div className={styles.study_info__footer}>
-        <Footer alignContentEvenly={false} sticky={sticky}>
-          <Button label="Next" handleClick={goForward} />
-        </Footer>
-      </div>
+      {!hasBackOnly && (
+        <div className={styles.study_info__footer}>
+          <Footer alignContentEvenly={false} sticky={sticky}>
+            <Button label="Next" handleClick={goForward} />
+          </Footer>
+        </div>
+      )}
     </div>
   );
 };
