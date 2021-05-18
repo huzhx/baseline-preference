@@ -8,9 +8,7 @@ const Profile = () => {
   return (
     <NavItem testId="profileContainer" icon={<MdAccountCircle />}>
       <DropdownMenu>
-        <DropdownItem>
-          <NotificationPreference />
-        </DropdownItem>
+        <NotificationPreference />
       </DropdownMenu>
     </NavItem>
   );
