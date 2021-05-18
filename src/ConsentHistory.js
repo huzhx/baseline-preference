@@ -38,7 +38,7 @@ const ConsentHistory = () => {
 
   const buttonLabelMap = {
     'Data Not Shared with Research Team': 'Modify Consent',
-    'Data Shared with Research Team': 'View Data Shared',
+    'Data Shared with Research Team': 'View Study Details',
   };
 
   const studies = [];
