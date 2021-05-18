@@ -4,7 +4,7 @@ import styles from './Text.module.css';
 
 const Text = ({ value }) => {
   return (
-    <div className={styles.text__container}>
+    <div data-testid="textContent" className={styles.text__container}>
       <span>{value}</span>
     </div>
   );
